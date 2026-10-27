@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html data-page-node-id="iHtPwKZyY2hyHGFn8zaSY2" data-theme="light" lang="en"><head data-page-node-id="bADieZhH3TBCVNp8vJIJB2">
+<script data-page-node-id="ZU6JIIz03KablBum6UsFYj" src="/page/page_comm/inject.js"></script>
+<meta data-page-node-id="15rvaBgqlUbFu8riBUMIy5" charset="UTF-8">
+<meta data-page-node-id="NE9W5Ap0kcRZl36TAW0Ewl" content="width=device-width, initial-scale=1.0" name="viewport"><title data-page-node-id="GZ7Vow9BjeLSotFXQogU4R" data-pnid-children="sa7o0pAR6LAQBxLL6vcWyp">Zhang Yunzhou · Gaming &amp; Internet Portfolio</title>
+<title data-page-node-id="1Jva9yLCXz8QpGrmpGYS6u" data-pnid-children="2lbcS7ZjQD7TQFg7b9Xf0E">张韵周 · 游戏与互联网作品集</title>
+<meta data-page-node-id="k5licnuDhuqW7Xf3JdQrUS" content="Zhang Yunzhou — MPhil student in Computational Social Science, game design and data analytics. Game Jams, VR, AI agent simulation and more." name="description">
+<style data-page-node-id="mNjojgCs9IljDhbupLkpOR" data-pnid-children="cGjrz9WSkXDGEYWx4y9Xvo">
+/* ============ THEME TOKENS ============ */
+:root{
+  --bg:#f6f7fc; --bg2:#eef0f9; --panel:#ffffff; --panel2:#f3f5fb;
+  --line:#e2e6f3; --line2:#cdd4ea;
+  --txt:#1c2135; --txt-dim:#5b6280;
+  --purple:#7c5cf0; --cyan:#0d9488; --pink:#db2777; --amber:#b45309;
+  --grad:linear-gradient(90deg,#7c5cf0,#0d9488);
+  --shadow:0 10px 30px rgba(28,33,53,.08);
+  --shadow-lg:0 18px 50px rgba(28,33,53,.14);
+  --glow-op:.16; --nav-bg:rgba(246,247,252,.8);
+  --lb-bg:rgba(15,18,40,.9);
+  --radius:14px;
+}
+[data-theme="dark"]{
+  --bg:#0b0e1a; --bg2:#11152a; --panel:#161b33; --panel2:#1c2242;
+  --line:#2a3160; --line2:#3a4280;
+  --txt:#e8ebff; --txt-dim:#9aa3d0;
+  --purple:#a78bfa; --cyan:#5eead4; --pink:#f472b6; --amber:#fbbf24;
+  --grad:linear-gradient(90deg,#a78bfa,#5eead4);
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --shadow-lg:0 18px 50px rgba(0,0,0,.5);
+  --glow-op:.35; --nav-bg:rgba(11,14,26,.75);
+  --lb-bg:rgba(5,7,18,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--txt);
+  font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",-apple-system,"Segoe UI",sans-serif;
+  line-height:1.7;overflow-x:hidden;
+  transition:background .35s,color .35s;
+}
+::selection{background:var(--purple);color:#fff}
+
+/* ---------- bilingual switch (CSS driven, attribute safe) ---------- */
+.i18n-en{display:none}
+html[lang="en"] .i18n-zh{display:none}
+html[lang="en"] .i18n-en{display:inline}
+
+/* ---------- background ---------- */
+.bg-grid{
+  position:fixed;inset:0;z-index:-2;
+  background-image:
+    linear-gradient(rgba(124,92,240,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(124,92,240,.06) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 40%,transparent 100%);
+}
+.bg-glow{position:fixed;z-index:-1;border-radius:50%;filter:blur(120px);opacity:var(--glow-op);pointer-events:none}
+.bg-glow.g1{width:520px;height:520px;background:#7c5cf0;top:-180px;left:-120px}
+.bg-glow.g2{width:420px;height:420px;background:#0d9488;top:30%;right:-160px}
+.bg-glow.g3{width:460px;height:460px;background:#db2777;bottom:-160px;left:30%}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 4vw;
+  background:var(--nav-bg);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.logo{font-weight:800;font-size:1.12rem;letter-spacing:.5px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--txt);flex:none}
+.logo .pix{width:14px;height:14px;background:var(--grad);box-shadow:4px 4px 0 var(--pink)}
+.logo em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-right{display:flex;align-items:center;gap:10px;min-width:0}
+nav ul{display:flex;gap:4px;list-style:none;overflow-x:auto;scrollbar-width:none}
+nav ul::-webkit-scrollbar{display:none}
+nav ul a{color:var(--txt-dim);text-decoration:none;font-size:.9rem;padding:7px 13px;border-radius:8px;white-space:nowrap;transition:all .2s}
+nav ul a:hover,nav ul a.on{color:var(--txt);background:var(--panel2)}
+.nav-cta{border:1.5px solid var(--purple)!important;color:var(--purple)!important}
+.nav-cta:hover{background:var(--purple)!important;color:#fff!important}
+.tbtn{
+  flex:none;width:36px;height:36px;border-radius:9px;border:1px solid var(--line);
+  background:var(--panel);color:var(--txt);cursor:pointer;font-size:1rem;
+  display:inline-flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.tbtn:hover{border-color:var(--purple);transform:translateY(-2px)}
+.langbtn{width:auto;padding:0 12px;font-size:.8rem;font-weight:700}
+
+/* ---------- layout ---------- */
+section{max-width:1120px;margin:0 auto;padding:96px 5vw 0}
+.sec-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;letter-spacing:2px;color:var(--cyan);
+  border:1px solid var(--line);border-radius:99px;padding:4px 14px;
+  background:rgba(13,148,136,.07);margin-bottom:14px;
+}
+.sec-tag::before{content:"";width:8px;height:8px;background:var(--cyan)}
+h2.sec-title{font-size:clamp(1.6rem,3.4vw,2.2rem);margin-bottom:8px}
+.sec-sub.wide{max-width:100%}
+.sec-sub{color:var(--txt-dim);margin-bottom:40px;max-width:640px}
+
+/* ---------- hero ---------- */
+#hero{min-height:100vh;display:flex;align-items:center;gap:60px;padding-top:120px;padding-bottom:40px;max-width:1120px}
+.hero-l{flex:1.25}
+.hero-r{flex:1;display:flex;justify-content:center}
+.hero-hi{font-size:.95rem;color:var(--cyan);letter-spacing:1px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.blink{display:inline-block;width:10px;height:18px;background:var(--cyan);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+h1{font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1.15;margin-bottom:18px}
+h1 .name{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-role{font-size:1.05rem;color:var(--txt-dim);margin-bottom:26px;font-weight:700}
+.hero-role b{color:var(--pink);font-weight:700}
+.hero-role i{color:var(--amber);font-style:normal;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.chip{font-size:.82rem;padding:5px 14px;border-radius:8px;background:var(--panel);border:1px solid var(--line);color:var(--txt-dim)}
+.chip b{color:var(--purple);font-weight:600}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.btn{text-decoration:none;padding:12px 28px;border-radius:10px;font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s;display:inline-block}
+.btn-pri{background:var(--grad);color:#fff;box-shadow:0 4px 24px rgba(124,92,240,.3)}
+.btn-pri:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(124,92,240,.45)}
+.btn-ghost{border:1.5px solid var(--line2);color:var(--txt)}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
+.photo-frame{
+  position:relative;width:min(340px,80vw);aspect-ratio:3/4;
+  border-radius:var(--radius);overflow:hidden;border:2px solid var(--line);
+  box-shadow:0 0 0 6px var(--bg2),var(--shadow-lg),0 0 80px rgba(124,92,240,.18);
+  animation:float 5s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-frame::after{
+  content:"ZOEY · LV.99";position:absolute;left:12px;bottom:12px;
+  font-size:.7rem;letter-spacing:2px;color:#fff;background:var(--grad);
+  padding:4px 12px;border-radius:6px;font-weight:800;
+}
+.pix-deco{position:absolute;width:12px;height:12px}
+.pd1{top:-26px;left:-26px;background:var(--pink);box-shadow:20px 0 0 var(--purple),0 20px 0 var(--cyan)}
+.pd2{bottom:-26px;right:-26px;background:var(--cyan);box-shadow:-20px 0 0 var(--amber)}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.about-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.about-card h3{font-size:1.05rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.about-card h3::before{content:"▸";color:var(--purple)}
+.about-card p{color:var(--txt-dim);font-size:.95rem;margin-bottom:12px}
+.about-card p b{color:var(--txt);font-weight:600}
+.about-list{list-style:none;margin:0 0 12px;padding:0;color:var(--txt-dim);font-size:.95rem}
+.about-list li{padding-left:18px;position:relative;margin-bottom:8px}
+.about-list li::before{content:"▸";position:absolute;left:0;color:var(--purple)}
+.about-list b{color:var(--txt);font-weight:600}
+.about-list .hl{color:var(--pink);font-weight:700}
+.stat-row{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+.stat-row.two{display:grid;grid-template-columns:repeat(2,1fr);margin-top:16px}
+.stat{flex:1;min-width:110px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center}
+.stat .num{font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lab{font-size:.75rem;color:var(--txt-dim);margin-top:2px}
+.skill-group{margin-bottom:0;padding:12px 0;border-bottom:1px dashed var(--line)}
+.skill-group:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
+.skill-group:first-of-type{padding-top:0}
+.skill-group .sg-t{font-size:.85rem;font-weight:700;margin-bottom:10px;color:var(--txt)}
+.skill-group .sg-t span{color:var(--cyan);margin-right:6px}
+.skill-bar{height:8px;border-radius:99px;background:var(--bg2);border:1px solid var(--line);overflow:hidden;margin-top:4px}
+.skill-bar i{display:block;height:100%;border-radius:99px;background:var(--grad);width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.skill-row{display:flex;justify-content:space-between;gap:8px;font-size:.8rem;color:var(--txt-dim);margin-bottom:3px}
+.skill-row.one-line{white-space:nowrap;font-size:.74rem;letter-spacing:-.1px}
+.skill-row.one-line .sg-t{flex-shrink:0}
+.skill-row.one-line span:last-child{flex:1;overflow:hidden;text-overflow:ellipsis}
+
+/* ---------- projects ---------- */
+.proj{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;margin-bottom:36px;box-shadow:var(--shadow);
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.proj:hover{transform:translateY(-4px);border-color:var(--purple);box-shadow:var(--shadow-lg)}
+.proj-media{position:relative;aspect-ratio:16/9;min-height:0;overflow:hidden;cursor:zoom-in}
+.proj-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.proj:hover .proj-media img{transform:scale(1.05)}
+.proj-body{padding:30px 32px;display:flex;flex-direction:column;justify-content:center}
+.proj.flip .proj-media{order:2}
+.proj-tag{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.tag{font-size:.72rem;padding:3px 10px;border-radius:6px;font-weight:600;letter-spacing:.5px}
+.t-purple{background:rgba(124,92,240,.12);color:var(--purple);border:1px solid rgba(124,92,240,.35)}
+.t-cyan{background:rgba(13,148,136,.1);color:var(--cyan);border:1px solid rgba(13,148,136,.3)}
+.t-pink{background:rgba(219,39,119,.1);color:var(--pink);border:1px solid rgba(219,39,119,.3)}
+.t-amber{background:rgba(180,83,9,.1);color:var(--amber);border:1px solid rgba(180,83,9,.3)}
+.proj-body h3{font-size:1.3rem;margin-bottom:4px}
+.proj-body .role{font-size:.85rem;color:var(--txt-dim);margin-bottom:12px}
+.proj-body .role b{color:var(--amber);font-weight:600}
+.proj-body p{font-size:.92rem;color:var(--txt-dim);margin-bottom:12px}
+.proj-body p b{color:var(--txt)}
+.proj-stats{display:flex;gap:18px;flex-wrap:wrap;padding-top:12px;border-top:1px dashed var(--line2)}
+.pstat{font-size:.8rem;color:var(--txt-dim)}
+.pstat b{color:var(--cyan);font-size:1.05rem;font-weight:800;margin-right:4px}
+.proj-sub{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-16px;margin-bottom:36px}
+.proj-sub img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;
+  border:1px solid var(--line);cursor:zoom-in;box-shadow:var(--shadow);
+  transition:transform .2s,border-color .2s;
+}
+.proj-sub img:hover{transform:translateY(-3px);border-color:var(--cyan)}
+
+/* ---------- timeline ---------- */
+.tl{position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line2)}
+.tl-item{position:relative;margin-bottom:34px;padding-right:200px}
+.tl-item::before{
+  content:"";position:absolute;left:-30px;top:8px;width:14px;height:14px;
+  background:var(--bg);border:3px solid var(--purple);border-radius:3px;
+  box-shadow:0 0 12px rgba(124,92,240,.5);
+}
+.tl-item:first-child::before{border-color:var(--cyan);box-shadow:0 0 12px rgba(13,148,136,.5)}
+.tl-date{font-size:.78rem;color:var(--cyan);letter-spacing:1px;font-weight:700}
+.tl-item h3{font-size:1.1rem;margin:4px 0 2px}
+/* logo + industry tag rail: pinned to the right, vertically centered */
+.co-row{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin:0;text-align:right;
+}
+.co-logo{height:42px;width:auto;display:block}
+img[src*="yanfeng.png"]{width:170px}
+img[src*="boke.png"]{width:164px}
+.co-logo-img{height:46px;width:auto;display:block}
+.co-logo-img.dk{display:none}
+[data-theme="dark"] .co-logo-img.lt{display:none}
+[data-theme="dark"] .co-logo-img.dk{display:block}
+[data-theme="dark"] img.co-tods{filter:invert(1)}
+.co-ind{
+  font-size:.68rem;padding:2px 9px;border-radius:99px;font-weight:600;
+  background:var(--panel2);border:1px solid var(--line);color:var(--txt-dim);white-space:nowrap;
+}
+.tl-item .co{font-size:.9rem;color:var(--pink);font-weight:600}
+.tl-item li .st{color:var(--purple);font-weight:700}
+.tl-item ul{list-style:none;font-size:.9rem;color:var(--txt-dim)}
+.tl-item ul li{padding-left:18px;position:relative;margin-bottom:4px}
+.tl-item ul li::before{content:"▸";position:absolute;left:0;color:var(--purple)}
+.tl-item ul b{color:var(--txt);font-weight:600}
+
+/* ---------- game gallery ---------- */
+.gfilters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.gfilters.years{margin-bottom:28px}
+.gtab{
+  font-size:.82rem;padding:6px 16px;border-radius:99px;cursor:pointer;user-select:none;
+  background:var(--panel);border:1px solid var(--line);color:var(--txt-dim);font-weight:600;transition:all .2s;
+}
+.gtab:hover{border-color:var(--purple);color:var(--purple)}
+.gtab.on{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(124,92,240,.35)}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:18px}
+.gcard{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s,border-color .2s;
+  animation:gin .4s ease both;
+}
+@keyframes gin{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+.gcard:hover{transform:translateY(-4px);border-color:var(--purple);box-shadow:var(--shadow-lg)}
+.gcard.hide{display:none}
+.gcover{
+  aspect-ratio:3/4;position:relative;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(150deg,var(--c1),var(--c2));overflow:hidden;
+}
+.gcover::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+.gcover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .45s}
+.gcard:hover .gcover img{transform:scale(1.06)}
+.gemo{font-size:2.6rem;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));position:relative}
+.gbody{padding:12px 16px 2px}
+.gname{color:var(--txt);font-weight:800;font-size:1.02rem;line-height:1.35}
+.gtype{
+  position:absolute;top:10px;right:10px;z-index:2;
+  font-size:.68rem;color:#fff;letter-spacing:.5px;
+  border:1px solid rgba(255,255,255,.5);border-radius:99px;padding:2px 10px;
+  background:rgba(0,0,0,.4);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+}
+.ginfo{padding:8px 16px 16px;font-size:.8rem}
+.grow{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.grow:last-child{border-bottom:none;padding-bottom:0}
+.grow:first-child{padding-top:0}
+.grow span{color:var(--txt-dim);flex:none}
+.grow b{color:var(--txt);font-weight:600;text-align:right}
+.gnote{margin-top:26px;font-size:.85rem;color:var(--txt-dim);background:var(--panel2);border:1px dashed var(--line2);border-radius:10px;padding:12px 18px}
+
+/* ---------- galleries ---------- */
+.gal{columns:3 250px;column-gap:16px}
+.gal figure{break-inside:avoid;margin-bottom:16px;position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);cursor:zoom-in;box-shadow:var(--shadow)}
+.gal img{width:100%;display:block;transition:transform .45s}
+.gal figure:hover img{transform:scale(1.06)}
+/* life gallery: fixed 3-column grid so photos stay horizontally aligned */
+#gallery .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;column-gap:16px}
+#gallery .gal figure{margin:0}
+#gallery .gal img{aspect-ratio:2/3;object-fit:cover;height:auto}
+.gal figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:30px 14px 12px;
+  background:linear-gradient(transparent,rgba(10,12,30,.85));
+  font-size:.85rem;font-weight:600;color:#fff;
+}
+.gal figcaption span{display:block;font-size:.75rem;color:rgba(255,255,255,.78);font-weight:400}
+.gal figcaption .cap-t{font-size:.85rem;font-weight:600;color:#fff}
+.gal figcaption .cap-s{font-size:.75rem;font-weight:400;color:rgba(255,255,255,.78)}
+.hobby-badge{
+  position:absolute;top:10px;left:10px;font-size:.68rem;padding:3px 10px;border-radius:6px;
+  background:var(--grad);color:#fff;font-weight:800;letter-spacing:1px;
+}
+.fan-mod{margin-top:44px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.fan-mod h3{font-size:1.15rem;display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.fan-mod h3::before{content:"🎨"}
+.fan-mod .fnote{font-size:.85rem;color:var(--txt-dim);margin-bottom:20px}
+.fan-grid{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+.fan-grid+.fan-grid{margin-top:22px}
+.fan-grid.square{grid-template-columns:repeat(4,1fr)}
+.fan-grid.square img{aspect-ratio:1/1}
+.fan-grid.postcard{grid-template-columns:repeat(2,1fr)}
+.fan-grid.postcard img{aspect-ratio:3/2}
+.fan-grid figure{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;margin:0}
+.fan-grid img{width:100%;object-fit:cover;display:block;transition:transform .4s}
+.fan-grid figure:hover img{transform:scale(1.06)}
+.fan-grid figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;
+  background:linear-gradient(transparent,rgba(10,12,30,.85));
+  font-size:.75rem;font-weight:600;color:#fff;text-align:center;
+}
+.fan-grid .fkind{
+  position:absolute;top:8px;left:8px;font-size:.62rem;padding:2px 8px;border-radius:6px;
+  background:var(--grad);color:#fff;font-weight:800;
+}
+
+/* ---------- contact ---------- */
+.contact-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:48px 40px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.contact-box::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.contact-box h2{font-size:1.7rem;margin-bottom:10px}
+.contact-box>p{color:var(--txt-dim);margin-bottom:28px}
+.nowload{
+  margin:0 auto 30px;max-width:520px;background:var(--panel2);border:1px dashed var(--line2);
+  border-radius:12px;padding:18px 22px;text-align:left;
+}
+.nl-tag{
+  display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:2px;
+  color:var(--cyan);font-weight:800;margin-bottom:8px;
+}
+.nl-tag::before{content:"";width:8px;height:8px;background:var(--cyan);animation:blink 1.2s steps(1) infinite}
+.nl-item{font-size:.92rem;color:var(--txt-dim);padding:3px 0}
+.nl-item b{color:var(--txt)}
+.contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.clink{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--txt);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px 22px;font-size:.92rem;transition:all .2s}
+.clink:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,92,240,.22)}
+.clink .ico{width:20px;height:20px;flex:none}
+
+/* ---------- lightbox ---------- */
+#lb{
+  position:fixed;inset:0;z-index:200;background:var(--lb-bg);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;padding:2vw;
+  cursor:zoom-out;touch-action:none;overflow:hidden;
+}
+#lb.on{display:flex}
+#lb img{
+  max-width:96vw;max-height:90vh;border-radius:10px;border:1px solid var(--line);
+  box-shadow:0 24px 80px rgba(0,0,0,.6);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1);transform-origin:center center;
+  user-select:none;-webkit-user-drag:none;
+}
+#lb .close{
+  position:absolute;top:14px;right:18px;width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.12);color:#fff;font-size:1.3rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;z-index:5;
+}
+#lb .hint{
+  position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+  font-size:.72rem;color:rgba(255,255,255,.75);background:rgba(0,0,0,.35);
+  padding:5px 14px;border-radius:99px;white-space:nowrap;pointer-events:none;
+}
+
+footer{margin-top:110px;border-top:1px solid var(--line);padding:30px 5vw;text-align:center;color:var(--txt-dim);font-size:.82rem}
+footer .pixheart{display:inline-block;width:10px;height:10px;background:var(--pink);margin:0 4px;
+  clip-path:polygon(20% 0,80% 0,100% 30%,100% 60%,50% 100%,0 60%,0 30%)}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:880px){
+  #hero{flex-direction:column;text-align:center;padding-top:110px;gap:44px}
+  .hero-cta,.chips{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .proj{grid-template-columns:1fr}
+  .proj.flip .proj-media{order:0}
+  .proj-media{min-height:0}
+  .proj-body{padding:24px 22px}
+  .proj-sub{grid-template-columns:repeat(2,1fr)}
+  .gal{columns:2 160px}
+  #gallery .gal{grid-template-columns:1fr}
+  .tl-item{padding-right:0}
+  .co-row{position:static;transform:none;flex-direction:row;align-items:center;margin-bottom:8px;text-align:left}
+  .fan-grid,.fan-grid.square{grid-template-columns:repeat(2,1fr)}
+  .fan-grid.postcard{grid-template-columns:1fr}
+  .skill-row.one-line{white-space:normal;font-size:.78rem}
+  .ggrid{grid-template-columns:repeat(2,1fr)}
+  .contact-box{padding:36px 20px}
+  nav{padding:10px 3vw}
+}
+</style>
+<noscript data-page-node-id="FaLMy1VI4MCWKSNHQXNVl4"><!--pnid:ajvGHa9QYuFtXpsJAFXm67--><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+<style data-page-node-id="WsC3npmzP1D2LK3QSfHUxH" data-pnid-children="pOvYtxPXGWFZChPQgLLiE6" id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style data-page-node-id="wN0gleaGzL86UrakWTpoQh" data-pnid-children="NSuVrbzeRzsp14hP8ILwva" id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="ycVh4r1cayoCm1tiDjcxMJ">
+<div data-page-node-id="NZzF7gUG2e5vrjX9UiyoAK" class="bg-grid"></div>
+<div data-page-node-id="wfQ6y027FeqgPlHobYIW0V" class="bg-glow g1"></div><div data-page-node-id="pJXJgeA87vwr2iDEQe3Jpf" class="bg-glow g2"></div><div data-page-node-id="I56aCqPAqzhA4KK4Jh0U48" class="bg-glow g3"></div>
+
+<nav data-page-node-id="hPHkfAK3O3b8hQlYlPMsFM">
+  <a data-page-node-id="XFkqA0m25oTnM8JsJR2Yza" class="logo" href="#hero"><span data-page-node-id="XwfxDOpV5z83kkjhZe7fJw" class="pix"></span><span data-page-node-id="wnV6xII1YUZUekNH3AGQ3X" class="i18n-zh"><!--pnid:1bSjUgSy4kmzHJshjE2WoC-->ZOEYZ​<em data-page-node-id="pggWgflSLH9TEONmIfWfpU"><!--pnid:ICFK7Jb1eTABSfmkn4il8l-->.EXE</em></span><span data-page-node-id="FltjC5rMOIwvYYgdFiGIEI" class="i18n-en"><!--pnid:uJOTXkUZuUOf4YSHhWHnnb-->ZOEYZ​<em data-page-node-id="NXUt0ly2JbeIA89bHQEElP"><!--pnid:Kbcq6LXGPEoCyX7bf6wB27-->.EXE</em></span></a>
+  <div data-page-node-id="ZKE1cteHBu8LK42Q3HUOEN" class="nav-right">
+    <ul data-page-node-id="B0a6poy3hI2LMJfwDBdmU4">
+      <li data-page-node-id="JKXisa1ZrYWlwbnnAABptJ"><a data-page-node-id="OYVbVqTeLXaCwHksNavpn4" class data-en="About" data-zh="关于我" href="#about"><!--pnid:Ejqzn0iZQYhsHLCUXWrpdr-->About</a></li>
+      <li data-page-node-id="K0EEtgByJCMezQDnfvdHC5"><a data-page-node-id="zq7lnLhuRSrGdHCpbyDqK7" class data-en="Projects" data-zh="项目作品" href="#projects"><!--pnid:w90gh5skSzTuBqVKxbiZ3S-->Projects</a></li>
+      <li data-page-node-id="p3zSbSxLkiwPtYcQWbWzUp"><a data-page-node-id="qPpWcslm6n7BikXzGafm2D" class data-en="Experience" data-zh="实习经历​" href="#exp"><!--pnid:sXzaJZpe0MN4Xhk0ORa9Sn-->Experience</a></li>
+      <li data-page-node-id="xF9GzrK5SPZ2j8DcCDmozW"><a data-page-node-id="3LaLCGKlX8wEKGxDs78iUV" class data-en="Games" data-zh="游戏图鉴​" href="#games"><!--pnid:MQEBOlte5J5dJJSQY7Fwxw-->Games</a></li>
+      <li data-page-node-id="xTpHfXzV1wG3pMIFdwobND"><a data-page-node-id="hvdE5dqviexOv52eiDPp1y" class data-en="Hobbies" data-zh="爱好​" href="#hobbies"><!--pnid:sOjgkvza3TfOJbrW7DFU0h-->Hobbies</a></li>
+      <li data-page-node-id="uubhUj7uCUXZSx76wzyW6f"><a data-page-node-id="iJtcWSZnjYCuT52WEVsdvH" class data-en="Life" data-zh="生活​" href="#gallery"><!--pnid:MIfr9ERmjiwCnqzRaPlgbr-->Life</a></li>
+      <li data-page-node-id="gHe3bZF0KatZnIwc8KTt2Q"><a data-page-node-id="geT2R6W9CzgnhMEB18Owfk" class="nav-cta" data-en="Contact" data-zh="联系我" href="#contact"><!--pnid:naw9BgVeHUe9Lu8QCPKP7u-->Contact</a></li>
+    </ul>
+    <button data-page-node-id="UdoDIwwXA9few1ZEz9A4vM" class="tbtn langbtn" id="langBtn" title="Switch language"><!--pnid:UGMj0rbkZofhsmYUiFjUyD-->中</button>
+    <button data-page-node-id="gLleGkXoglCJr20RIpnw0J" class="tbtn" id="themeBtn" title="切换深色 / 浅色"><!--pnid:XUerivXe71G8RvWTxadZca-->🌙</button>
+  </div>
+</nav>
+
+<!--pnid:9Lucf5aartOyMDrxeVNcz5--><!-- ================= HERO ================= -->
+<section data-page-node-id="vXSC9dCPXhaP2gHLACmHdK" id="hero">
+  <div data-page-node-id="wdG2x6TMNLUD1f9kRN9Ezm" class="hero-l">
+    <div data-page-node-id="hqzvp1P3s3ZSYLc43XIO9P" class="hero-hi"><span data-page-node-id="NB4ds3QQLHgmFpCeOBh0I5" class="i18n-zh"><!--pnid:osUNCIPX6vUAg9NyjLU7Vc-->HELLO WORLD · 我是​</span><span data-page-node-id="ICrrsYQXcQiBjPQWBT5bEZ" class="i18n-en"><!--pnid:4LkPLzZ0Daqm2PRYVO17j3-->HELLO WORLD, I AM</span> <span data-page-node-id="QsBI1y5Z8KZWFfqUGX8nsb" class="blink"></span></div>
+    <h1 data-page-node-id="71shSMbJWthAqUizM8WvWI">
+      <span data-page-node-id="K0tLpcD085cgVpjA9jdPao" class="i18n-zh"><!--pnid:t97Iae1d8nIQXXnvusUxFs-->张韵周 · ZOEY​</span>
+      <span data-page-node-id="Ijht2acLY18xKyZQE8BrX6" class="i18n-en"><!--pnid:0BEEHncpJTDPzKl3iLrlZR-->Zhang Yunzhou</span>
+    </h1>
+    <p data-page-node-id="Xy09gRHnjoefCC4TlXOTJu" class="hero-role">
+      <span data-page-node-id="8QBfJs9YyeJDJouesD8oWw" class="i18n-zh" style="white-space:pre-wrap; color:rgb(68, 84, 106); font-size:16px"><b data-page-node-id="EdDPOu6CJqsAB5FTU7vkfA" style="white-space:pre-wrap; color:rgb(68, 114, 196)"><!--pnid:VI4LY3qDUkpq22mKr70Jcu-->香港中文大学（深圳）| 计算社会科学硕士在读（2027 届）
+</b><!--pnid:7KeEp6uW1cgbjvipJfxudO-->市场营销 × <i data-page-node-id="mGkjmz3mh1DdJdOF81pa9A"><!--pnid:83wGgOsWpHE4IRcuI6sUFZ-->数据分析 </i><br data-page-node-id="VHJcK6F7MOwDzE0ehGRzsK"><!--pnid:GDp0XBs6DD4o4fMCIkVU38-->· 求职方向：<b data-page-node-id="fMGtu2x5pXwm98cNwlGOSs"><!--pnid:c5fFC3EFYm4jzwfjKabTfC-->市场 / 发行 / 策划 / 数分 / 运营​​</b><!--pnid:AOL2JIkgQCTcrTRK0KHSvn-->（游戏 / 互联网 / 快消）</span>
+      <span data-page-node-id="eo8BLDuHwGAc1ibiqEjI2P" class="i18n-en" style="white-space:pre-wrap"><b data-page-node-id="vgbAsggArExaz4iB7XnDZ2"><!--pnid:xG12L11uC6oI9HZXQGuUa3-->Game Develop</b><!--pnid:KMh0d6jmGKqgXVrYxRuzQI--> × <i data-page-node-id="0Je83AqmnCTTqjBkY6j48w"><!--pnid:jIOsgiVXphIt84mE8ebjb5-->Data Analytics
+</i><!--pnid:bVeHSUXrtAxmAteTaa6hj4-->· MsC in Computational Social Science (Statistics), CUHK-Shenzhen (2027)<br data-page-node-id="HkXBrIutDS72sWG6mkIND7"><!--pnid:NZxicezfO9FT5CRbehAsN0-->Target roles: <b data-page-node-id="sAVWnydhAltqXcEi6UITsf"><!--pnid:i7E80oYfuvqhWgNhM1CzXM-->Game Designer / Publishing Ops / Marketing / PR / Data Analyst</b><!--pnid:77GNJtWRhrhDB4jqjvbw9e--> (Gaming · Internet · FMCG)</span>
+    </p>
+    <div data-page-node-id="rVrj0YJ4l4ECDobuircPor" class="chips">
+      <span data-page-node-id="sEMchCE2F3AB6o6ajbLNWI" class="chip"><!--pnid:Cax5vpGzl8AJnGrnLqem6I-->🎮 <b data-page-node-id="rgiIxuEwDX3iJb5hnjBxG2"><!--pnid:xftmHLCQiAMHCF75R1SH9E-->Unity</b><!--pnid:agr0GpFwy2lyKkHFIVBNpG--> / C#</span>
+      <span data-page-node-id="pMVXbQDFz5MJVKklWx7AIe" class="chip"><!--pnid:rXY1VLbeAjag0XPwzhERUu-->🐍 Python</span>
+      <span data-page-node-id="k5hWvAcULtGxdiiDLiFcva" class="chip"><!--pnid:eJvcffBnKRwEyae4rI212H-->🤖 <b data-page-node-id="Z7ep1HImKxpaE1Cg8PeoFo"><!--pnid:FOfK1HTmCep0JbHe5Yav2G-->AI Agent</b> <span data-page-node-id="Nh9yk2O76abiCXLdTmHZte" data-en="Modeling" data-zh="建模"><!--pnid:EPHWgPx2voewKD9OAvfVbV-->Modeling</span></span>
+      <span data-page-node-id="KegpzqN8Pv7H8sJZATmS8i" class="chip"><!--pnid:n6BtXCydpb3T0xgNSdrmxQ-->📊 Excel / R​</span>
+      <span data-page-node-id="ZTMb7UCH9fbxhddw6NeD0R" class="chip"><!--pnid:ZmuNTo3Z2Es8OvDsFlqkYB-->🌐 VR / Krpano</span>
+      <span data-page-node-id="7MEsJ3gbDCHrj6vm3Pc4za" class="chip"><!--pnid:qLvA0vbEL8x9yOXcXss3OQ-->✨ Vibe Coding</span>
+    </div>
+    <div data-page-node-id="TI5PvxZfH6WGJUF0EWoxjW" class="hero-cta">
+      <a data-page-node-id="6aahN0S68kPFrHbEPKuIjB" class="btn btn-pri" data-en="▶ Open My Save File" data-zh="▶ 进入我的存档" href="#projects"><!--pnid:ejGZZCNeX9z6f4N0U4EjdF-->▶ Open My Save File</a>
+      <a data-page-node-id="s475HQowBFYbkteGWDKTAq" class="btn btn-ghost" data-en="✉ Send Friend Request" data-zh="✉ 发送好友申请" href="#contact"><!--pnid:idAmWUXItQyjn9gVKdkbEO-->✉ Send Friend Request</a>
+    </div>
+  </div>
+  <div data-page-node-id="8gFruExqtL0lSGTMCNbbtj" class="hero-r">
+    <div data-page-node-id="CBK737mBzUQd6pmeI92CHL" class="photo-frame">
+      <span data-page-node-id="zsT1FvTZGwIlTJR8UADzHh" class="pix-deco pd1"></span>
+      <img data-page-node-id="Otu9fcd8ffellM5nRxFRBN" alt="Zoey 的照片" src="assets/img/hero.jpg">
+      <span data-page-node-id="mn99aBNn9GNms7OreZ83kb" class="pix-deco pd2"></span>
+    </div>
+  </div>
+</section>
+
+<!--pnid:NH2Xoc3mJjZCjOR4K0KArc--><!-- ================= ABOUT ================= -->
+<section data-page-node-id="XPyYvQvbHDxC74lH33d5Aq" id="about">
+  <div data-page-node-id="eEXLJXPTJ4iCZBFQHmDrRv" class="sec-tag rv in"><span data-page-node-id="REwrw0OMKs3pJXGCPr5BOK" class="i18n-zh"><!--pnid:GY5eOdvEmikYnXDZkIWCEy-->关于 ·</span><span data-page-node-id="vardnWu4IHgNB8Hlmjt282" class="i18n-en"><!--pnid:rVgloIDPo2vnDehohOrtUJ-->ABOUT ·</span><span data-page-node-id="dzEeOpLUjtvnD5OefS9MYh" data-en="Player Profile" data-zh="玩家档案"><!--pnid:LsgS56UIo6GnGxKSzEzDgt-->Player Profile</span></div>
+  <h2 data-page-node-id="N4uk7jcNK5vj0SaF0e4MLQ" class="sec-title rv in" data-en="A developer who understands both data and the market" data-zh="一个既懂数据、又懂市场的开发者"><!--pnid:ozeHLpmyXnIV37k62muVyr-->A developer who understands both data and the market</h2>
+  <p data-page-node-id="7JFRvf0d9V4lOBC3H7IVyQ" class="sec-sub rv in" data-en="From GIS to computational social science, I have always been telling stories with data and building experiences through interaction." data-zh="从地理信息科学到计算社会科学，我一直在用数据讲故事、用交互制造体验。"><!--pnid:5e3EIsxaabGYNS28SMNHdq-->From GIS to computational social science, I have always been telling stories with data and building experiences through interaction.</p>
+  <div data-page-node-id="LNv9RLLIstjWAJWxOpcuBg" class="about-card rv in">
+      <h3 data-page-node-id="VcHNaSilMohrhdyGgvD0gP" data-en="Profile" data-zh="角色简介"><!--pnid:ly5NEq7XCaE1hdONh7KxzX-->Profile</h3>
+      <p data-page-node-id="BnFq9Bl3alAv3v3t2189RQ" data-en="I am Zhang Yunzhou (Zoey), a master's student in Computational Social Science (Statistics) at CUHK-Shenzhen, with a bachelor's degree in Geographic Information Science (Remote Sensing) from Hangzhou Normal University. From my academic background, I have complete data science and AI project experience covering the full pipeline of data analysis, machine learning modeling and visualization." data-zh="我是张韵周（Zoey），<b data-page-node-id=&quot;HhKhYkqqEtLcnjIIOndW5S&quot;>香港中文大学（深圳）计算社会科学（统计学）硕士在读</b>，本科毕业于杭州师范大学地理信息科学（遥感信息）方向。从自身学科专业而言，我具备<b data-page-node-id=&quot;rlsc67HKfQuGFlmnW8DTY4&quot;>数据科学与人工智能</b>的完整项目经历：数据分析、机器学习建模与可视化全流程。"><!--pnid:bZT1B1E12yrvtbCZYoxVQC-->I am Zhang Yunzhou (Zoey), a master's student in Computational Social Science (Statistics) at CUHK-Shenzhen, with a bachelor's degree in Geographic Information Science (Remote Sensing) from Hangzhou Normal University. From my academic background, I have complete data science and AI project experience covering the full pipeline of data analysis, machine learning modeling and visualization.</p>
+      <p data-page-node-id="RFcGAlZenrGYmPEj2NiQxK" data-en="Meanwhile, I am a VR and game developer:" data-zh="同时，我是一名VR与游戏开发者："><!--pnid:S9kOvSmMOYlT3NOQQPSeLJ-->Meanwhile, I am a VR and game developer:</p>
+      <ul data-page-node-id="R8MwM1xJve5ENd0WEMxc6y" class="about-list">
+        <li data-page-node-id="u2A7ArBUem33fgOHgUfKyI" data-en="In the Ludum Dare 58 Game Jam, served as planner + programmer of the dialogue system and the shop system, building StarBearer (Top 25% worldwide)." data-zh="在<b data-page-node-id=&quot;CHbMWePLPaa0fQeyHpT1FG&quot;>Ludum Dare 58</b> Game Jam中担任<span class=&quot;hl&quot; data-page-node-id=&quot;09zMEtwA9QJI851mhZZESn&quot;>【对话系统+商店系统】</span>的<span class=&quot;hl&quot; data-page-node-id=&quot;Hkyt4ktHgHXwAwn9noZ0KJ&quot;>【策划+程序】</span>完成《StarBearer》（全球前 25%）。"><!--pnid:Cd5qRjXK8lnAzMrGgn8wBv-->In the Ludum Dare 58 Game Jam, served as planner + programmer of the dialogue system and the shop system, building StarBearer (Top 25% worldwide).</li>
+        <li data-page-node-id="cEsCseyIJ0xIigDY1U695Q" data-en="Led the design and development of the serious game Emotional Island, a CBT-based emotional healing game." data-zh="主导设计开发<b data-page-node-id=&quot;Z6aNGDjGh9bXlHZTFmizrS&quot;>Serious Game心理游戏</b><span class=&quot;hl&quot; data-page-node-id=&quot;8pmePxBwnNJ4xZR5Kqur4B&quot;>【基于 CBT 认知行为疗法的情绪疗愈游戏《Emotional Island》】</span>。"><!--pnid:HCn1apFydofynxsoCuOLAb-->Led the design and development of the serious game Emotional Island, a CBT-based emotional healing game.</li>
+        <li data-page-node-id="EogCGuSsZwckrNtODENOCT" data-en="Hold the software copyright of the VR Panoramic Museum as first inventor (10,000+ visits since launch)." data-zh="作为<b data-page-node-id=&quot;YxPR9MygGByRBAct2Fpgjh&quot;>第一发明人</b>持有 <span class=&quot;hl&quot; data-page-node-id=&quot;iJT7DuRibo7mJyNmG8iS1y&quot;>【VR 全景博物馆软件著作权】</span>（上线访问量超万次）。"><!--pnid:QPKWPWQKwisEXNBdHXkyPP-->Hold the software copyright of the VR Panoramic Museum as first inventor (10,000+ visits since launch).</li>
+      </ul>
+      <p data-page-node-id="oiBCqks9x6CdPSAgNYfdF6" data-en="I believe the game industry is being reshaped by data and AI, and I want to stand at the intersection: understand players with data, move players with design." data-zh="我相信游戏行业正在被数据与 AI 重塑——而我希望站在交叉点上：<b data-page-node-id=&quot;I1VAJBQf6WXW2ek21PW9lm&quot;>用数据理解玩家，用设计打动玩家</b>。"><!--pnid:2St1tjAe2rf19My7GiLGlN-->I believe the game industry is being reshaped by data and AI, and I want to stand at the intersection: understand players with data, move players with design.</p>
+    </div>
+    <div data-page-node-id="ZHMgKcdXW5pjntfwHPYGHK" class="about-grid">
+      <div data-page-node-id="ExnP6oYTxTQaubDmlXXTc3" class="about-card rv in">
+        <h3 data-page-node-id="GitH3KTGNHq9oPWDYUm7lP" data-en="Highlights" data-zh="数据亮点"><!--pnid:Q3niPbIBlVIFYtYrivG1oH-->Highlights</h3>
+        <div data-page-node-id="P7q7NHGHDlV7bBYswCABPs" class="stat-row two">
+        <div data-page-node-id="TqOKINEv7CW9NbNroJOiFw" class="stat"><div data-page-node-id="9nplss0yGVEyxSkg9PHqe2" class="num"><!--pnid:qfzAoyRaDK8u6d711euVmC-->2D</div><div data-page-node-id="oE7NXHpf83mE4EpJ74AR1J" class="lab" data-en="Game Jams" data-zh="Game Jam"><!--pnid:RTbwC097FMCbObaCPyCcq7-->Game Jams</div></div>
+        <div data-page-node-id="ChgwptT8xA7U7jXAqsEAwq" class="stat"><div data-page-node-id="JqfzvYENu25n1qhGrEKQtv" class="num"><!--pnid:BR8ScIlucYkRUSVhQJReFf-->Top 25%</div><div data-page-node-id="vB0cCqWmZDU4OCNQGJjtBt" class="lab"><!--pnid:fhYNeG2Laecw65Gyw506o2-->Ludum Dare 58</div></div>
+        <div data-page-node-id="Nw5WPvnY8MJ1bSTuUoXMHz" class="stat"><div data-page-node-id="5D1D286F3PlzlKvSN7aoY8" class="num"><!--pnid:LAKIl5h2dYwUpMyQxF2NGn-->1st</div><div data-page-node-id="Zh9eHA5zj7IeCWuP7HF7rZ" class="lab" data-en="Software Copyright · First Inventor" data-zh="软著第一发明人"><!--pnid:fxTyLLQgo5dBeAE6lmoqba-->Software Copyright · First Inventor</div></div>
+        <div data-page-node-id="s0hAEnYjd0QBbrIiM4PRwX" class="stat"><div data-page-node-id="zSFsRLKhI0S56DBvQsvDsd" class="num"><!--pnid:rOd6uJAwlkNW5Z9PsuL8HD-->10000+</div><div data-page-node-id="POxZNezEThbtrD14bIXfWa" class="lab" data-en="VR project on Zhejiang Gov platform | total visits" data-zh="VR 项目上线浙江省政府平台 | 累计访问量"><!--pnid:wt1EALuwPJnghRpUDJ76gT-->VR project on Zhejiang Gov platform | total visits</div></div>
+      </div>
+      </div>
+      <div data-page-node-id="RDAhvdZydQ1kGTkvwLfwqH" class="about-card rv in">
+        <h3 data-page-node-id="8ACP9zGaFJmTQN0WUUmqaM" data-en="Skill Tree" data-zh="技能树"><!--pnid:rUC9oPOz5iVRJnmJgX1ya2-->Skill Tree</h3>
+      <div data-page-node-id="hvntjAP642paVi6EfR1KD8" class="skill-group">
+        <div data-page-node-id="KrHSP9RFQrEdq8jxn7mwQm" class="skill-row"><span data-page-node-id="ljWlqY1H6HNsBrhqAFgNk7" class="sg-t"><span data-page-node-id="RJKQ3GMsk5dYvrHuEk5DQU"><!--pnid:shuf0KQLkBkawpAU3012Du-->⌨</span><span data-page-node-id="bSNgdJvJIzJ1r6q4pvSQcu" data-en="Game Development" data-zh="游戏开发"><!--pnid:6xTjWg26kgxt9FB9kHocN1-->Game Development</span></span><span data-page-node-id="En9w5aCeWR210LS3E89RpO"><!--pnid:Vf49M4dhmIfUJGd1eXGbX5-->Unity · C#</span></div>
+      </div>
+      <div data-page-node-id="kCWjqIbyM0ic3JXcVHEBFq" class="skill-group">
+        <div data-page-node-id="ELUPbFFEnjnEK3O5vHpxvB" class="skill-row"><span data-page-node-id="QvifIoeeOsWbW6921hWZcw" class="sg-t"><span data-page-node-id="1Zu2BVoyGCim2CdONTgoek"><!--pnid:6hvwZ1OtTnwjMxWw4pDGyY-->🐍</span><!--pnid:BAvnuzfeASzDxNpzbNNE8f-->Python <span data-page-node-id="TBT2DtgjMkbBwvpbqt2H0m" data-en="Data Science" data-zh="数据科学"><!--pnid:U7w8HEtP9YMRXfpmUgPYSX-->Data Science</span></span><span data-page-node-id="K7cZeNvk5dRbGi73385EWc"><!--pnid:DAn2DDT3Qb0KaFFpO6y5hB-->Pandas · Numpy · Matplotlib</span></div>
+      </div>
+      <div data-page-node-id="gJsw3Lu1UxjEkigNKe6hi4" class="skill-group">
+        <div data-page-node-id="q4tpVZkQSEn9vKPiCaSEYO" class="skill-row"><span data-page-node-id="DBFBnaamoSFCqwzsupiVeH" class="sg-t"><span data-page-node-id="J5YKOkCxHOY4k2s7X46ZEm"><!--pnid:80ClenlhrvCZkVAT9fhlD4-->📊</span><span data-page-node-id="IwSOuqjHAtq3CTgOrDyU50" data-en="Statistics and Database" data-zh="统计与数据库"><!--pnid:tSJRL4Hm6TTgL2Ego4O4gq-->Statistics and Database</span></span><span data-page-node-id="DmRU14Bu9VMoFT5kKxnmyc"><!--pnid:pAEeE45houUj49V3rKZtbw-->R · Excel · Access​</span></div>
+      </div>
+      <div data-page-node-id="nolcBHUqRccNEivNpNX58R" class="skill-group">
+        <div data-page-node-id="SKPH6369Vqt3Drz2DdWnIV" class="skill-row"><span data-page-node-id="nPgAnTh8SGn5mGswUO0RnV" class="sg-t"><span data-page-node-id="gHsHWi4UYtbAVHb54gb3fu"><!--pnid:FlR3me3fRFG5EGRTxHF4xR-->🌐</span><span data-page-node-id="qwFgt62RAHASkOvKDaixei" data-en="Web / VR Interaction" data-zh="Web / VR 交互"><!--pnid:yUgqQo0gb6EPZGRIkHzrXe-->Web / VR Interaction</span></span><span data-page-node-id="Tg2g7q0JC4fsT0HQ4LmQRn"><!--pnid:nOD5eDi7jqz1v8Kwlvn5MC-->JavaScript · Krpano · ArcGIS</span></div>
+      </div>
+      <div data-page-node-id="JAvriQS9bZKGFdEFv3CwZ2" class="skill-group">
+        <div data-page-node-id="HBKx3mOREDvA7EKRiadQV4" class="skill-row"><span data-page-node-id="5vpJjhCgj9NWgWrRSXyAtm" class="sg-t"><span data-page-node-id="YAbC4IkCTcHjVeYkzc2Vya"><!--pnid:qeD3JpArhHG4YdKJQzfvzP-->🤖</span><span data-page-node-id="HZxMx6FytqFd1PtArorSIZ" data-en="AI Toolchain" data-zh="AI 工具链"><!--pnid:JcsP81At3hhtaPKCJmfPHE-->AI Toolchain</span></span><span data-page-node-id="vb4yfSAyKq7drc8961Nuds"><!--pnid:TuYr9WUaMMkXLmcXPfra0Q-->LLM Agent · Streamlit · Plotly</span></div>
+      </div>
+      <div data-page-node-id="AjqwrpI240IW8sqTnvIbfv" class="skill-group">
+        <div data-page-node-id="t0Aeqsqzio4yuLN8zMuX8H" class="skill-row one-line"><span data-page-node-id="qlHEd2hAmH4cS6QiMPjWLg" class="sg-t"><span data-page-node-id="NSWMsQo9WbN7ilUU2MDWIr"><!--pnid:FMrnsuVtFPr6B7ZWekw7XZ-->✨</span><!--pnid:IGgfgmJzfMdaENjMdu0hFP-->Vibe Coding</span><span data-page-node-id="WwEoDZHdLEjtuPQSMRBGAv" style="text-align:right"><!--pnid:zE7Jpb8WJcQ5LSzhWqrzXY-->Cursor · Claude Code · Codex · Workbuddy · Coze​</span></div>
+      </div>
+    </div>
+      </div>
+    
+</section>
+
+<!--pnid:A3icxxdmiZNs0TIscdQXHY--><!-- ================= PROJECTS ================= -->
+<section data-page-node-id="JivVZUIiqXGwPy1W1tZMNB" id="projects">
+  <div data-page-node-id="ImwTTfKaxRc09j7NvK3EXs" class="sec-tag rv in"><span data-page-node-id="mEMrLGCMa0FeC82ohmn0px" class="i18n-zh"><!--pnid:2Vo19zeb5o2pcw2fJCRBfj-->项目 ·</span><span data-page-node-id="oPzkeSwBG2d3hI13vtMrmF" class="i18n-en"><!--pnid:JEgeifePIfs1CjPFbpJqP6-->PROJECTS ·</span><span data-page-node-id="wTlAn2loayBxGfIRzpNSoC" data-en="Cleared Stages" data-zh="通关记录"><!--pnid:AvL8wCCAGxvwg0199RSA13-->Cleared Stages</span></div>
+  <h2 data-page-node-id="FJuD0l2Fc18zkKYhp2PCt9" class="sec-title rv in" data-en="Projects" data-zh="项目作品"><!--pnid:EHSkV4G5d9E4GaRhhPzbkW-->Projects</h2>
+  <p data-page-node-id="w7CChMVedWu0LwDcXlDssR" class="sec-sub rv in" data-en="Game development × data science × VR interaction — every stage cleared with care." data-zh="游戏开发 × 数据科学 × VR 交互 = 每一关都认真通关​"><!--pnid:fukRyX8Xb6bDQVZJqvURTj-->Game development × data science × VR interaction — every stage cleared with care.</p>
+
+  <!--pnid:NxYNd5mb7dQCwspV6e3O8s--><!-- StarBearer -->
+  <div data-page-node-id="Hd2B0qvvrrfSCGOJExFzSu" class="proj rv in">
+    <div data-page-node-id="svfJ3EN9CXzDDT02dS58no" class="proj-media"><img data-page-node-id="SgRAPORxgKCAWYFxGWDlz7" alt="StarBearer 游戏主界面" data-last-crop-h="655.1013357899586" data-last-crop-w="1200" data-last-crop-x="0" data-last-crop-y="19.898664210041456" data-original-src="http://127.0.0.1:61871/static-html/1e5385c809cec1bc/assets/img/starbearer1.jpg" src="images/img-1793019710915-976hqq.jpg"></div>
+    <div data-page-node-id="mPA6Ksq7AAAhQOk5vVRyKA" class="proj-body">
+      <div data-page-node-id="fmIHbhz6FqK3w4GGmjRtFE" class="proj-tag">
+        <span data-page-node-id="IhDCfi0zJri5Brdu9VnBME" class="tag t-pink" data-en="🎮 Game Dev" data-zh="🎮 游戏开发"><!--pnid:60bYrsFsDJ4Uy920kkW7wZ-->🎮 Game Dev</span>
+        <span data-page-node-id="J1qRWWKBeAkZtOAAA1Oi8D" class="tag t-purple"><!--pnid:nXjJmNemAjVkVUeXu75wrK-->Game Jam · Ludum Dare 58</span>
+        <span data-page-node-id="FwAeKe7h8NrNltGjmMuAFn" class="tag t-cyan" data-en="Design and Dev" data-zh="开发设计"><!--pnid:m07aXcILzJdwbCmUcnAGVw-->Design and Dev</span>
+      </div>
+      <h3 data-page-node-id="Huz5uHLRvEXNK6cu9uUl5X" data-en="StarBearer" data-zh="StarBearer · 携星者"><!--pnid:yvH4pHFbsdtCvRk1yc9iWp-->StarBearer</h3>
+      <div data-page-node-id="Dp379pMoEWzXIzaDCmn8aB" class="role" data-en="Ludum Dare 58 · Planner + Programmer of Dialogue and Shop Systems · 2025.10" data-zh="Ludum Dare 58 · <b data-page-node-id=&quot;AW5xBvxpH0ye5HEO3NNbwU&quot;>【对话系统+商店系统】【策划+程序】</b> · 2025.10"><!--pnid:r7xfWDzC28dgdqpFfJr27l-->Ludum Dare 58 · Planner + Programmer of Dialogue and Shop Systems · 2025.10</div>
+      <p data-page-node-id="U1infbaR6E25E9BCu0JWea" data-en="A pixel-art side-scrolling 2D platformer. I was responsible for the planning and programming of the Dialogue and Shop systems (Start-up, Dialogue, Shop interfaces), and used C# scripts to polish the visual presentation, bringing the pixel art to life inside the engine." data-zh="· 像素风横板 2D 跳跃游戏
+· 负责<b data-page-node-id=&quot;XIO0hQfUKgP2R7Sr7FSTwh&quot;>【对话系统 + 商店系统】的策划与程序开发</b>（Start-up、Dialogue、Shop 三大界面），并用 C# 脚本优化视觉呈现效果，让像素美术在引擎里活起来。" style="white-space:pre-wrap"><!--pnid:A95kf0MPLrxOldSR0vzUjV-->A pixel-art side-scrolling 2D platformer. I was responsible for the planning and programming of the Dialogue and Shop systems (Start-up, Dialogue, Shop interfaces), and used C# scripts to polish the visual presentation, bringing the pixel art to life inside the engine.</p>
+      <div data-page-node-id="SD5C5UhSbNgGhPcgzDYBmW" class="proj-stats">
+        <span data-page-node-id="WUbdJSd5CeQFxWd6TDCeRf" class="pstat"><b data-page-node-id="VcwZaF756d3pAEfGFTCRus"><!--pnid:WFuJX8qDlE7kXXBfOyW7Md-->329</b><span data-page-node-id="dUQvnyxdZ7kpgZMEtDz2M4" data-en="global rank / 1388 teams" data-zh="全球排名 / 1388 支队伍"><!--pnid:bLLBlsaC6Mo5XXiuplVi2M-->global rank / 1388 teams</span></span>
+        <span data-page-node-id="lhbQGrztgsrX8uC3fmssvw" class="pstat"><b data-page-node-id="13gC8kkAva4DO5mSiA8Rwy"><!--pnid:1m1LPGnLZfRTg6R2L129yG-->Top 25%</b><span data-page-node-id="8TgscI3Hkk96ZPlPxv09CD" data-en="overall" data-zh="总成绩"><!--pnid:gFjXEXVf1IkcO7GslTkvIT-->overall</span></span>
+      </div>
+    </div>
+  </div>
+  <div data-page-node-id="IVSQyZdJlFrDhPmq3uqFoJ" class="proj-sub rv in">
+    <img data-page-node-id="tzWUqZq2IgIB495tZoj5bF" alt="StarBearer 游戏截图 2" src="assets/img/starbearer2.jpg">
+    <img data-page-node-id="9u6cj3yb3xl7AWDdIAkrJZ" alt="StarBearer 游戏截图 3" data-last-crop-h="651.9837335268606" data-last-crop-w="1200" data-last-crop-x="0" data-last-crop-y="23.01626647313937" data-original-src="http://127.0.0.1:61871/static-html/1e5385c809cec1bc/assets/img/starbearer3.jpg" src="images/img-1793019719965-4tfdlr.jpg">
+    <img data-page-node-id="nQvwyrT1z99Ma3BZBc8gr0" alt="StarBearer 游戏截图 4" src="assets/img/starbearer4.jpg">
+  </div>
+
+  <!--pnid:Xb1pJerHlxHkag6TsUq8cT--><!-- Emotional Island -->
+  <div data-page-node-id="4ubcO9TAcmB2EZswJyoXv5" class="proj flip rv in">
+    <div data-page-node-id="FcTAoodjRqyg9lNeEpIWAa" class="proj-media"><img data-page-node-id="zMdbsrYyefPvnHxcHENmDH" alt="Emotional Island 游戏设计" src="assets/img/ei-main.jpg"></div>
+    <div data-page-node-id="WGCl0dd8QDbAKKf67BGb3w" class="proj-body">
+      <div data-page-node-id="eqjSakWGHubesYfykqclF1" class="proj-tag">
+        <span data-page-node-id="dsyk2HpwIBOPWFNld3H8BW" class="tag t-pink" data-en="🎮 Game Design" data-zh="🎮 游戏设计"><!--pnid:LFIvgNN6if2ZeNpkL405cR-->🎮 Game Design</span>
+        <span data-page-node-id="1H9tD1K6891NldZJ2zJl2U" class="tag t-amber" data-en="Healing / Serious Game" data-zh="疗愈 / Serious Game"><!--pnid:QMF9N6iqIKWD20smgCjdSM-->Healing / Serious Game</span>
+        <span data-page-node-id="B4LCtPy8s764IRxZWpl7De" class="tag t-cyan"><!--pnid:jnsGp3eariCnfJy5qndmVr-->Unity · C#</span>
+      </div>
+      <h3 data-page-node-id="4jyBsNr5xsFg6rcKjQECAi" data-en="Emotional Island · CBT Healing Game" data-zh="Emotional Island · CBT 情绪疗愈游戏"><!--pnid:2RMK7jnmAI8K4uOZNw2tKx-->Emotional Island · CBT Healing Game</h3>
+      <div data-page-node-id="0sLinc48lnIflU9FlGnLQo" class="role" data-en="Lead Designer · 2025.10 – 12" data-zh="<b data-page-node-id=&quot;bw1NcjG3UltEJIx88nXAnQ&quot;>主要设计师​</b> · 2025.10 – 12"><!--pnid:CUVWt4bWYHCmekjSSGsoBc-->Lead Designer · 2025.10 – 12</div>
+      <p data-page-node-id="zmdId5AAO49DtmgYQrww5u" data-en="A 2D pixel-art interactive sandbox game based on Cognitive Behavioral Therapy (CBT): designed the three-stage gameplay loop of thought sorting, sandbox placement and personalized mental-prototype report; built the emotion-assessment and sandbox system logic; implemented UI and report generation with Unity and C#." data-zh="· 基于<b data-page-node-id=&quot;rU3KZjmCD3xN4pDB566z68&quot;>认知行为疗法（CBT）</b>的 2D 像素风交互沙盘游戏：
+· 设计“思维分类 → 沙盘摆放 → 个性化心理原型报告”三段式玩法闭环
+· 完成情绪评估与沙盘系统逻辑开发
+· Unity + C# 实现界面与报告生成" style="white-space:pre-wrap"><!--pnid:7OHkS4U82WTjm3NPU7Hdgb-->A 2D pixel-art interactive sandbox game based on Cognitive Behavioral Therapy (CBT): designed the three-stage gameplay loop of thought sorting, sandbox placement and personalized mental-prototype report; built the emotion-assessment and sandbox system logic; implemented UI and report generation with Unity and C#.</p>
+      <div data-page-node-id="Ha2hMtbAvkI5zF2KOSIVk2" class="proj-stats">
+        <span data-page-node-id="E4KHV7iN2PShBw69ZThl5k" class="pstat"><b data-page-node-id="D4iwUvVIxM0oy2Sr8PeAj7"><!--pnid:bbdmPCxHyT6Mszfd2WBPfE-->200+</b><span data-page-node-id="uSHAkwyf4RQuhECB0YYsSY" data-en="valid user feedback" data-zh="有效用户反馈"><!--pnid:HwpIjfwOCUgGDsL8eYmvxU-->valid user feedback</span></span>
+        <span data-page-node-id="KtFCgv04l7zkgd6vQv1xsV" class="pstat"><b data-page-node-id="ZWMSG40gG6dc7QLEyx8vps"><!--pnid:lUnhWWoLhd2LyPJ6GODmvf-->89%</b><span data-page-node-id="rYGzwTrGWR3ltrr3ChHBfE" data-en="user satisfaction" data-zh="用户满意度"><!--pnid:9gKBfFHHMp4pAooeSnRlFI-->user satisfaction</span></span>
+      </div>
+    </div>
+  </div>
+  <div data-page-node-id="U6YEC1NgcHPZxAmEnLTm67" class="proj-sub rv in">
+    <img data-page-node-id="JCrMJkffqmZ7ReEqPqo4oZ" alt="Emotional Island 详情图 1" src="assets/img/ei-d1.jpg">
+    <img data-page-node-id="YN0tEp2AyLvSnc2mrkPR7d" alt="Emotional Island 详情图 2" src="assets/img/ei-d2.jpg">
+    <img data-page-node-id="4NtIIQMb68sjf4G2wOny5n" alt="Emotional Island 详情图 3" src="assets/img/ei-d3.jpg">
+  </div>
+
+  <!--pnid:0sgnlTho81gOhFagLblxOr--><!-- LLM Agent -->
+  <div data-page-node-id="J5Bq3lPILNQEKCXEK5uZyD" class="proj rv in">
+    <div data-page-node-id="9qmuJNwkfL7Q6U4LXDV3uB" class="proj-media"><img data-page-node-id="ZuX02fN1vLJEo7bRgDVAEf" alt="LLM 股票市场情绪代理模拟器" src="assets/img/llm-main.jpg"></div>
+    <div data-page-node-id="sdsDGIPV5b4c76LIxsf2n6" class="proj-body">
+      <div data-page-node-id="oHaBx5fRGuk60WBA9F4e6v" class="proj-tag">
+        <span data-page-node-id="hYm5vDscr8z6ZpdTBxUo6T" class="tag t-purple"><!--pnid:E7bTaw0DzmbyP2DXwGYJq9-->🤖 AI / LLM</span>
+        <span data-page-node-id="Y0I4nBRIrv7nmoPRYwP43Q" class="tag t-cyan" data-en="Data Visualization" data-zh="数据可视化"><!--pnid:QeM6BFVD7gHHQOiJXUbQWw-->Data Visualization</span>
+        <span data-page-node-id="FOnUquX1GiXSTb4m3jmLi0" class="tag t-amber" data-en="Lead Developer" data-zh="主要开发人"><!--pnid:LwGAysppIUOujwvIE5Abxx-->Lead Developer</span>
+      </div>
+      <h3 data-page-node-id="F6fWG5GR1XsDy3EBa7zgh8" data-en="LLM Multi-Emotion-Agent Stock Market Simulator" data-zh="LLM 多情绪代理股票市场模拟器"><!--pnid:fOw5nNGRMYy3Z8bs8Hjj5w-->LLM Multi-Emotion-Agent Stock Market Simulator</h3>
+      <div data-page-node-id="cRaglMzm03rlQ9WURMUT2Y" class="role" data-en="Lead Developer · 2025.10 – 12" data-zh="主要开发人 · 2025.10 – 12​​"><!--pnid:cD4KT3Gwy8VC7ZFUWTbr0U-->Lead Developer · 2025.10 – 12</div>
+      <p data-page-node-id="axpI4HLFpaBk4FDCcuHER7" data-en="An interactive stock-market simulation platform built with Streamlit, integrating the Baidu ERNIE Bot API to drive agent decisions: three AI Agents (optimistic, pessimistic, calm) trade emotionally based on random daily news. Plotly and Matplotlib dynamically visualize market sentiment and asset changes, illustrating behavioral-finance phenomena such as herding." data-zh="· 基于 <b data-page-node-id=&quot;AiLtgNIY950oRU7Kn9sNDl&quot;>Streamlit</b>开发交互式股票市场模拟平台 
+· 集成<b data-page-node-id=&quot;GsNhfTjaxJ5RenKEedxRko&quot; style=&quot;&quot;> Baidu 文心一言API </b>驱动智能体决策：设计 <b data-page-node-id=&quot;CjROfD6xDRfZZhHIqZJphI&quot;>乐观型 / 悲观型 / 冷静型 </b>三种 AI Agent，根据每日随机新闻做出情绪化交易。Plotly + Matplotlib 动态展示市场情绪与资产变化，直观呈现羊群效应等行为金融现象。" style="white-space:pre-wrap"><!--pnid:B7E4FQ4akRHWGp4dPgJIQw-->An interactive stock-market simulation platform built with Streamlit, integrating the Baidu ERNIE Bot API to drive agent decisions: three AI Agents (optimistic, pessimistic, calm) trade emotionally based on random daily news. Plotly and Matplotlib dynamically visualize market sentiment and asset changes, illustrating behavioral-finance phenomena such as herding.</p>
+      <div data-page-node-id="SGm96JFO8UJ0LsvhgjLLcX" class="proj-stats">
+        <span data-page-node-id="hFP5EytzjQv5UGna2CCY1i" class="pstat"><b data-page-node-id="dfwyMVP7YmEYgzCV4RAHG9"><!--pnid:9sHLH23R4ycxkOKFAWPEsy-->3</b><span data-page-node-id="VcS5ijyULSqkaihvS6CnFj" data-en="AI Agent personas" data-zh="种 AI Agent 人格"><!--pnid:2bKiQgb3yXyxGd8g5fwkMd-->AI Agent personas</span></span>
+        <span data-page-node-id="qw23bEAPq34JW6D5fzUS1l" class="pstat"><b data-page-node-id="VjO89ggcnjQBtXG3eho2v0"><!--pnid:dgHnUt4FX7A0HbySosWHQq-->4</b><span data-page-node-id="BbimysgLjPf4jbz8BeMWIA" data-en="visualization perspectives" data-zh="维可视化视角"><!--pnid:uncpD0cxQ1G9GQmwAYrUCA-->visualization perspectives</span></span>
+      </div>
+    </div>
+  </div>
+  <div data-page-node-id="hONYkYh1GsNtZRPZg7DDQg" class="proj-sub rv in">
+    <img data-page-node-id="153owCpJwDNWU9sObkycan" alt="LLM 模拟器详情图 1" src="assets/img/llm-d1.jpg">
+    <img data-page-node-id="pogCJ7bM8oCUsqdPRQK2RL" alt="LLM 模拟器详情图 2" src="assets/img/llm-d2.jpg">
+    <img data-page-node-id="jvXhLfuWih7KGLvm5mK4iS" alt="LLM 模拟器详情图 3" src="assets/img/llm-d3.jpg">
+  </div>
+
+  <!--pnid:XbsZilCLhfwjihPQyaL3cm--><!-- SSCI Paper -->
+  <div data-page-node-id="QbZwyjOx6CCIBl8HskQUmE" class="proj flip rv in">
+    <div data-page-node-id="HX59FL14R6rF4GQREYdBdG" class="proj-media"><img data-page-node-id="Gas8VfT3IfGrxJ0uWsDFcO" alt="论文主题词可视化" src="assets/img/lda-main.jpg"></div>
+    <div data-page-node-id="SzHnhcHYbFObxiDnJkPxA2" class="proj-body">
+      <div data-page-node-id="W05Dq7HvRVPZkCCfy3iZQo" class="proj-tag">
+        <span data-page-node-id="CEDsrmvVqAUKWXbFi2kvCu" class="tag t-purple" data-en="📚 Academic Research" data-zh="📚 学术研究"><!--pnid:oeANAx4rSXbHkvZ6eM6K6Z-->📚 Academic Research</span>
+        <span data-page-node-id="81TYJzqRoz9ko9peZhahvo" class="tag t-cyan" data-en="JCR (Q1) · CAS (Q3) | SSCI" data-zh="JCR (Q1) · 中科院 (Q3) | SSCI"><!--pnid:HwNyLxhnux2EFTXB8RVpN3-->JCR (Q1) · CAS (Q3) | SSCI</span>
+        <span data-page-node-id="R93pM16U0TcBChBE3daoyX" class="tag t-amber" data-en="Spatiotemporal Analysis" data-zh="时空分析"><!--pnid:1Emt4lbqZriJTDB6knIMC1-->Spatiotemporal Analysis</span>
+      </div>
+      <h3 data-page-node-id="Cn2BDyfvvySD4Zd5jiHiXW"><!--pnid:WjWjD3iPdiknS2DU8nOfqM-->Spatiotemporal Analysis of Local Elite Groups Across Generations in Zhejiang, China​</h3>
+      <div data-page-node-id="Gv5Ctf4MZsWnrXrVmLJbRU" class="role" data-en="（Spatiotemporal analysis of local elite groups across generations in Zhejiang, China）· SSCI journal · Second Author · 2023.10 – 2025.06" data-zh="（《中国浙江地区地方精英群体跨代时空分析》）· SSCI 核心外刊 · <b data-page-node-id=&quot;pIhIyNMH8AjZIGvaU9Lepl&quot;>第二作者</b> · 2023.10 – 2025.06"><!--pnid:NPYX812nebIlckWSfGWTdh-->（Spatiotemporal analysis of local elite groups across generations in Zhejiang, China）· SSCI journal · Second Author · 2023.10 – 2025.06</div>
+      <p data-page-node-id="1wICCFq9kPGpwpobbk07d6" data-en="Time-series visualization with Python (Numpy, Pandas, Matplotlib) and LDA topic modeling for thematic knowledge discovery; spatiotemporal change maps drawn with ArcGIS kernel density analysis, revealing the cross-generational spatiotemporal evolution of local elite groups from a digital humanities perspective." data-zh="· 通过 Python（Numpy / Pandas / Matplotlib）进行时序数据可视化，运用 <b data-page-node-id=&quot;VW3bP2lbkQG7mZWvdnGZ3s&quot;>LDA 主题模型</b>进行主题词知识发现
+· 使用<b data-page-node-id=&quot;NmUXrQbk5AhZL7yyDHFVAE&quot;>ArcGIS 核密度分析</b>绘制时空变化地图，从数字人文视角完成地方精英群体的跨代时空知识发现" style="white-space:pre-wrap"><!--pnid:bllnhHFXSKTID9V8Afm2nu-->Time-series visualization with Python (Numpy, Pandas, Matplotlib) and LDA topic modeling for thematic knowledge discovery; spatiotemporal change maps drawn with ArcGIS kernel density analysis, revealing the cross-generational spatiotemporal evolution of local elite groups from a digital humanities perspective.</p>
+      <div data-page-node-id="3L0PIicEEsEmOAsNe6DWsk" class="proj-stats">
+        <span data-page-node-id="B3p3uTExzoGWmvLpthJB5v" class="pstat"><b data-page-node-id="fXdQLYOM7jqPQsNpzur1VN"><!--pnid:SL0OcVAIu0TeGp4fvux83S-->Q1</b><span data-page-node-id="gPoRITRquBxc5GdSZzseOI" data-en="JCR Quartile" data-zh="JCR 分区"><!--pnid:qPLFvbkzKvBck63oSWczlt-->JCR Quartile</span></span>
+        <span data-page-node-id="0UN9jcMoqUHZTd10z1YmjK" class="pstat"><b data-page-node-id="h3VDYalM3JCbACkgGSeDHd"><!--pnid:2xV9Zez8xPoOrNm5Eb62vS-->2nd</b><span data-page-node-id="OrWXDOCoorwUxzkFEiyIOc" data-en="author · Second Author" data-zh="作者 · 第二作者"><!--pnid:GeBkL2LePfpxWU6yRxvjQ1-->author · Second Author</span></span>
+      </div>
+    </div>
+  </div>
+  <div data-page-node-id="BD98x8XCJvqgkYCK5z3Fja" class="proj-sub rv in">
+    <img data-page-node-id="DkxvZnBlazWfFa7eMCvHvJ" alt="论文详情图 1" src="assets/img/lda-d1.jpg">
+    <img data-page-node-id="lMFJ4exK3VxbUvl4fT3Le1" alt="论文详情图 2" src="assets/img/lda-d2.jpg">
+    <img data-page-node-id="PBGF1ls09y7Wl4a0LT7ZoE" alt="论文详情图 3" src="assets/img/lda-d3.jpg">
+  </div>
+
+  <!--pnid:zoZg51lHUAOOtz6C5S3VtE--><!-- VR Museum -->
+  <div data-page-node-id="exxgmp9WS7Wqxjvlrwt51s" class="proj rv in">
+    <div data-page-node-id="WrFHjthBpMpC7JY7TZ7N8q" class="proj-media"><img data-page-node-id="4XBIz2ApsCQXPRhcEfCd9o" alt="VR 全景博物馆" src="assets/img/vr.jpg"></div>
+    <div data-page-node-id="fEIzDBEbZHJqHZ7gWWsBTM" class="proj-body">
+      <div data-page-node-id="6pGYLPDWOAnL7tpw9ZW2Ox" class="proj-tag">
+        <span data-page-node-id="BMT2SIm4CzM2RkxGgvgtxe" class="tag t-cyan"><!--pnid:9skCjK7S5epOE3NDkWgZfE-->🌐 VR / Web</span>
+        <span data-page-node-id="HgGctKyGrvoRUBhxA32MSL" class="tag t-purple"><!--pnid:mCDWSgbNbrWzu1udwe6nWD-->Krpano · JavaScript</span>
+        <span data-page-node-id="wR6vmbGUC3PZcoRCd57EOJ" class="tag t-amber" data-en="First Inventor" data-zh="第一发明人"><!--pnid:um2JqbT6rQm0MmHk0uudXX-->First Inventor</span>
+      </div>
+      <h3 data-page-node-id="2q7XqHvxCAJBpDXgs2lFcH" data-en="VR Panoramic She Museum in Tonglu Eshan" data-zh="VR 全景桐庐莪山畲族馆"><!--pnid:Oi3lBYflIUbR5F0F6oTXTq-->VR Panoramic She Museum in Tonglu Eshan</h3>
+      <div data-page-node-id="yhDEGH4a917f33OYu2eNwH" class="role" data-en="First Inventor · Software Copyright · 2021.10 – 2023.06" data-zh="第一发明人 · 软件著作权 · 2021.10 – 2023.06"><!--pnid:f8ZSAuh83XZMvjzqeEk7Rd-->First Inventor · Software Copyright · 2021.10 – 2023.06</div>
+      <p data-page-node-id="BwmkiXSPoQJFv5pAEohmk3" data-en="Led VR panoramic shooting and post-production scene building: Krpano stitching and interaction design, JavaScript web-based VR roaming with multi-platform support. The project gathered 10,000+ visits after launch, was released on the Zhejiang provincial government platform, and obtained a computer software copyright." data-zh="· 主导 VR 全景拍摄与后期场景搭建<b data-page-node-id=&quot;XICCy8JHW8jdBrVz5U0lOE&quot; style=&quot;&quot;>· Krpano​</b> 全景拼接与交互设计，<b data-page-node-id=&quot;lWEFiQJfjVlRcQpkrIEZJF&quot;>JavaScript</b>实现网页端 VR 漫游，支持多平台浏览。项目上线浙江省政府平台后累计访问量超万次，并以第一发明人的身份取得<b data-page-node-id=&quot;ccw09eJEshox3Bds0OOTCe&quot;>计算机软件著作权</b>。" style="white-space:pre-wrap"><!--pnid:E1zfzCUsOY20uu9GX0OmQO-->Led VR panoramic shooting and post-production scene building: Krpano stitching and interaction design, JavaScript web-based VR roaming with multi-platform support. The project gathered 10,000+ visits after launch, was released on the Zhejiang provincial government platform, and obtained a computer software copyright.</p>
+      <div data-page-node-id="A5PRFqPgAzeVAqLY9cidDA" class="proj-stats">
+        <span data-page-node-id="jggBdUMJDpsMnL2GHBrV9y" class="pstat"><b data-page-node-id="8ZcDRIDwBoUN18XEuM8kvY"><!--pnid:PXxlygMncd3nh8YWICZPpe-->10000+</b><span data-page-node-id="V5PaMhgl5GJ0KMLEppLCeO" data-en="total visits since launch" data-zh="上线累计访问"><!--pnid:bl0N6hoUTGhhuWLdikPQnk-->total visits since launch</span></span>
+        <span data-page-node-id="Hw9IXwkAe71DCQ40pQMN7U" class="pstat"><b data-page-node-id="0HRZfQkWygs3GO1oS0PprZ"><!--pnid:xlQvHxaTXygf29IoPLeAyO-->1st</b><span data-page-node-id="FKBQK9oLjA7zOTZhKEzs4J" data-en="software copyright · First Inventor" data-zh="软件著作权 · 第一发明人"><!--pnid:LSdEkMoEV1KEhblZLTrQRb-->software copyright · First Inventor</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--pnid:Z1l0qwFkryHSQRheGUbVL5--><!-- ================= EXPERIENCE ================= -->
+  <section data-page-node-id="pALaQP438TwVaHWjBMvRW8" id="exp">
+    <div data-page-node-id="3CKSIRjDbmKdvyAdGVn7hy" class="sec-tag rv in"><span data-page-node-id="fxRC0NJTVZzEQ1v7Br2CA9" class="i18n-zh"><!--pnid:Tjs2GRrpEIZrzJb9Tmd4pP-->经历 ·</span><span data-page-node-id="J7gG3fuLUsju6htlRgAGWi" class="i18n-en"><!--pnid:sENmUGzWUvmgBGTFh6emjF-->EXPERIENCE ·</span><span data-page-node-id="CWJY9HnrJebW5REt3jX8fH" data-en="Experience Log" data-zh="任务履历"><!--pnid:5oyVWfTIkGLpe8uEFLJ755-->任务履历</span></div>
+    <h2 data-page-node-id="KmXwcMA74DkqmLiOITcq1Q" class="sec-title rv in" data-en="Internship Experience" data-zh="实习经历"><!--pnid:fIfMXuaAkEen7RCtoRku3A-->实习经历</h2>
+    <p data-page-node-id="n8DRBUVQmj2bZRM7L5qFVi" class="sec-sub rv in" data-en="Game company → Sino-foreign auto-parts supplier → Italian luxury house | Data skills that fit every scene" data-zh="游戏公司 → 中德合资汽车零部件供应商 → 意大利知名奢侈品企业 = 数据能力全景适配​​"><!--pnid:03xAqjpb5yVIksKEh4Fvch-->Game company → Sino-foreign auto-parts supplier → Italian luxury house | Data skills that fit every scene</p>
+    <div data-page-node-id="D5UeF6DMcPvjZhq8HXF0TV" class="tl">
+    <div data-page-node-id="k0ob145B6SHBxhWCZrsCqC" class="tl-item rv in">
+      <div data-page-node-id="5JA2OHvQeFUGDQgL6VxsPH" class="tl-date"><!--pnid:JnCDlyy35Ke29Bkhumiv8z-->2026.05 – 2026.09</div>
+      <h3 data-page-node-id="Jt7RA54t6bnDTeCgJpWHth" data-en="Marketing &amp; PR | Celebrity Management · Market Research + Competitor Analysis + Sample Delivery" data-zh="Marketing &amp;amp; PR | Celebrity Management · 市场调研 + 竞品分析 + 样品寄送"><!--pnid:F9ICA4XxaPH3nTIggUYrZh-->Marketing &amp; PR | Celebrity Management · Market Research + Competitor Analysis + Sample Delivery</h3>
+      <div data-page-node-id="zloyYNJsgO6unhiH9eMWtl" class="co-row"><img data-page-node-id="THghIyxYF0GikD4k644jDH" alt="TOD'S" class="co-logo-img co-tods" src="assets/img/logos/tods.png" style="width:157px; height:72px"><span data-page-node-id="xNwswnV3IICHQ40MwLN7Hj" class="co-ind" data-en="Luxury / Fashion Retail" data-zh="奢侈品 / 时尚零售"><!--pnid:e7mnaExy6wUE08ULKAn7uL-->Luxury / Fashion Retail</span></div>
+      <div data-page-node-id="NwGU8ANyShkD18xuyOymtu" class="co" data-en="TOD'S Group (Shanghai) Trading Co., Ltd." data-zh="TOD'S Group · 托德斯（上海）商贸有限公司"><!--pnid:hdKmenWb1QrqTObn6dYcLv-->TOD'S Group (Shanghai) Trading Co., Ltd.</div>
+      <ul data-page-node-id="G2Q2p1YXDwMoAWATj2idtW">
+        <li data-page-node-id="O0QYYGTSxafXnjB3mBw27p" data-en="[Context &amp; Task] Amid intense competition in the luxury industry, I supported brand marketing and PR decisions by tracking competitors, uncovering consumer insights, and evaluating celebrity ambassadors and events." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;OrWXDOCoorwUxzkFEiyIOc&quot;>【情境与任务】</b>在奢侈品行业竞争激烈的背景下，为支持品牌营销与公关决策，需完成<b data-page-node-id=&quot;wR6vmbGUC3PZcoRCd57EOJ&quot;>竞品追踪</b>、<b data-page-node-id=&quot;2q7XqHvxCAJBpDXgs2lFcH&quot;>消费者洞察</b>及<b data-page-node-id=&quot;yhDEGH4a917f33OYu2eNwH&quot;>明星代言人评估与活动落地</b>。"><!--pnid:vVVOztUqU8VsYNN5sd9X2B-->[Context &amp; Task] Amid intense competition in the luxury industry, I supported brand marketing and PR decisions by tracking competitors, uncovering consumer insights, and evaluating celebrity ambassadors and events.</li>
+        <li data-page-node-id="Gdr766e9pOxTVyQfhcI5zN" data-en="[Action · Competitors &amp; Market] Built a luxury-industry competitor analysis matrix; used Workbuddy to build an industry-matrix asset library with multimodal visual dashboards, and produced ambassador research decks." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;FKBQK9oLjA7zOTZhKEzs4J&quot;>【行动 · 竞品与市场】</b>构建奢侈品行业<b data-page-node-id=&quot;fF2m9vjIC9xPCHEBokzBDC&quot;>竞品分析矩阵</b>，利用 <b data-page-node-id=&quot;Jt7RA54t6bnDTeCgJpWHth&quot;>Workbuddy</b> 建立<b data-page-node-id=&quot;xNwswnV3IICHQ40MwLN7Hj&quot;>行业矩阵素材库</b>并生成多模态可视化看板，产出竞品品牌代言人调研 PPT。"><!--pnid:cIvW7gb5yl2UOdtd2eVNwh-->[Action · Competitors &amp; Market] Built a luxury-industry competitor analysis matrix; used Workbuddy to build an industry-matrix asset library with multimodal visual dashboards, and produced ambassador research decks.</li>
+        <li data-page-node-id="1gXKMvAsS5xNok7YAyrTSo" data-en="[Action · Data &amp; Insight] Cleaned and organized daily sales data with Excel, analyzed consumer behavior in depth, and summarized consumption trends." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;nDQDO04htlxdvCExCJXHq6&quot;>【行动 · 数据与洞察】</b>运用 <b data-page-node-id=&quot;vWlEbGk6UgWdCZeo2UeHpd&quot;>Excel</b> 对日常销售数据进行清洗整理，深入分析<b data-page-node-id=&quot;I4wm3Fm711tyl1Y7KmfpVp&quot;>消费者行为</b>，总结消费趋势。"><!--pnid:Ew4fQJcsYG9y5EuCd0kzQp-->[Action · Data &amp; Insight] Cleaned and organized daily sales data with Excel, analyzed consumer behavior in depth, and summarized consumption trends.</li>
+        <li data-page-node-id="3MNJjrDdAF7XIzombZJjDa" data-en="[Action · Ambassadors &amp; Events] Helped identify and evaluate potential celebrity ambassadors, and coordinated celebrity appearances, travel and related arrangements." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;lqm4UypYu2pRWjrK6D2GNX&quot;>【行动 · 代言与活动】</b>协助挖掘潜在<b data-page-node-id=&quot;J0toBobs2XKQeCh4tGIUlm&quot;>明星代言人</b>，评估其市场适配度，并统筹安排明星出席活动的差旅及相关事宜。"><!--pnid:SGUZXnsTsVlLLjyuEQ3tPc-->[Action · Ambassadors &amp; Events] Helped identify and evaluate potential celebrity ambassadors, and coordinated celebrity appearances, travel and related arrangements.</li>
+        <li data-page-node-id="D9R7UeqZXlfBNxxeCZUO80" data-en="[Result] The research decks and visual dashboards provided direct data support for marketing strategy; successfully helped land celebrity events and ensured smooth PR execution." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;WK01IhQzXjJcZOR5oP72rh&quot;>【结果】</b>产出的<b data-page-node-id=&quot;NRsdgnvMni7FDLPfZ9l7Om&quot;>调研 PPT 与可视化看板</b>为营销策略提供了直观的数据支撑；成功协助完成<b data-page-node-id=&quot;i3XyfBvWl0JTjNL3WVVyKM&quot;>明星活动落地</b>，保障了公关活动的顺利推进。"><!--pnid:ZPFR3dwu6LFivQqrbRaL8J-->[Result] The research decks and visual dashboards provided direct data support for marketing strategy; successfully helped land celebrity events and ensured smooth PR execution.</li>
+      </ul>
+    </div>
+    <div data-page-node-id="clreDNFSHv83CG1XpZfJZG" class="tl-item rv in">
+      <div data-page-node-id="kDlfchu38rmpYQvGaFAXgb" class="tl-date"><!--pnid:d5Gvs2gfSWzuyqraetRxuC-->2025.01 – 2025.04</div>
+      <h3 data-page-node-id="tyFXh1cbuIDgVYnwiszYS2" data-en="Energy Data Analysis" data-zh="能源数据分析"><!--pnid:RhMc9Z5JalgEJyRhZbIZom-->Energy Data Analysis</h3>
+      <div data-page-node-id="oZMFucHoDkFxEOPQ39Ugqy" class="co-row"><img data-page-node-id="f61jJoxMfvcdqlGJVgORGJ" alt="YANFENG 延锋" class="co-logo-img lt" src="assets/img/logos/yanfeng.png"><img data-page-node-id="CzaowD8WQ2TyPlElFSzBks" alt="YANFENG 延锋" class="co-logo-img dk" src="assets/img/logos/yanfeng-white.png"><span data-page-node-id="QCphssSUMg1FawV3mI3IhN" class="co-ind" data-en="Automotive Parts Manufacturing" data-zh="汽车零部件制造"><!--pnid:C3bfMsTZ4lPBOlQQXJZpDO-->Automotive Parts Manufacturing</span></div>
+      <div data-page-node-id="CmvK2FZ6CzSQvd0o5zLDr5" class="co" data-en="Yanfeng Automotive Interior Systems (Shanghai) Co., Ltd." data-zh="延锋汽车内饰系统（上海）有限公司"><!--pnid:bMXcBAVNFK4WlE8cHajXuP-->Yanfeng Automotive Interior Systems (Shanghai) Co., Ltd.</div>
+      <ul data-page-node-id="kKnsKcID1eI9Ws0A0Zb5OM">
+        <li data-page-node-id="t7ySojZjpvcSIMTCzki3Ym" data-en="[Context &amp; Task] Facing high energy costs and a lack of quantitative forecasting, I built an energy-consumption prediction system to support energy-saving decisions." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;W9XXh5oz3LDO70yWLc3VwG&quot;>【情境与任务】</b>针对公司能源消耗成本高、缺乏量化预测模型的问题，负责构建<b data-page-node-id=&quot;NqZCEMGAXGWpnsYzmjZzq5&quot;>能耗预测体系</b>以辅助节能决策。"><!--pnid:OeI6alA7dafNfHfgL86UWf-->[Context &amp; Task] Facing high energy costs and a lack of quantitative forecasting, I built an energy-consumption prediction system to support energy-saving decisions.</li>
+        <li data-page-node-id="qGZdVOHjwVbHKJObhGeSKv" data-en="[Action] Built an energy-cost forecasting model with Excel (pivot tables / VLOOKUP), cleaned historical data and modeled trends, and identified high-consumption nodes via quantitative analysis." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;hzU6hxSKkEUsROFmESD5sL&quot;>【行动】</b>基于 Excel（透视表 / VLOOKUP）搭建<b data-page-node-id=&quot;ouEIH35ULrQApXVgt4ZSF0&quot;>能源成本预测模型</b>，对历史能耗数据进行清洗与趋势建模，并利用量化分析方法识别出产线中的高能耗节点。"><!--pnid:buczyJXFHMNP7tHlKzyr7r-->[Action] Built an energy-cost forecasting model with Excel (pivot tables / VLOOKUP), cleaned historical data and modeled trends, and identified high-consumption nodes via quantitative analysis.</li>
+        <li data-page-node-id="69CmBgHuNvCcKGLOoh1XFL" data-en="[Result] The model reached 92% prediction accuracy; the optimization measures cut monthly energy use by about 8%, delivering real cost savings." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;MlB1gSeaYyFAiByvaguo5j&quot;>【结果】</b>模型预测准确率达 <b data-page-node-id=&quot;LUSFhsudlSeogTvF0Bqr9W&quot;>92%</b>，并据此提出优化建议，经实施后<b data-page-node-id=&quot;6JwHUhu8Or38othN4vnk15&quot;>单月能耗降低约 8%</b>，有效实现降本增效。"><!--pnid:IRju9Z3fXDpdrNM0SDpgE4-->[Result] The model reached 92% prediction accuracy; the optimization measures cut monthly energy use by about 8%, delivering real cost savings.</li>
+      </ul>
+    </div>
+    <div data-page-node-id="jZSajC8u8Aa1g0zZKaUOq2" class="tl-item rv in">
+      <div data-page-node-id="gTGSd6e7U3Wlzj1sTLp2iY" class="tl-date"><!--pnid:8KdqpwnbpxAmakxmp9jIKn-->2024.07 – 2024.08</div>
+      <h3 data-page-node-id="lmbyFgN7qrvqsT8CRcOuDm" data-en="Sustainability Dept | Data Analysis 🎮" data-zh="可持续部门 | 数据分析 🎮"><!--pnid:CxXOqd5GQqrWXEdrCaanDM-->Sustainability Dept | Data Analysis 🎮</h3>
+      <div data-page-node-id="itclzsD4J3afJPL4qV2C9s" class="co-row"><img data-page-node-id="zlsGVv7EFSct091ECDTany" alt="波克城市 BOKE CITY" class="co-logo-img" src="assets/img/logos/boke.png" style="width:158px; height:44px"><span data-page-node-id="vCNHY6YGyypoOty8xewinL" class="co-ind" data-en="Gaming / Internet" data-zh="游戏 / 互联网"><!--pnid:sPbM0YKdNpGClsIvGjKgi7-->Gaming / Internet</span></div>
+      <div data-page-node-id="1QRotPLs4SWuplpT5xst5d" class="co" data-en="Boke City · Boke Technology Group Co., Ltd." data-zh="波克城市 · 波克科技集团有限公司"><!--pnid:vaVLmdiXD7lIDmV6uI3Axd-->Boke City · Boke Technology Group Co., Ltd.</div>
+      <ul data-page-node-id="ZlhnKooOOcIDSCSgVO6ZLV">
+        <li data-page-node-id="ATBrbDY5ifnWdbVig10a9k" data-en="[Context &amp; Task] To support the launch and content planning of the Game + Education project, I ran a benchmark study of an international 3D game design competition." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;omdqhw6pYJqSdbF8bEAya9&quot;>【情境与任务】</b>为支持<b data-page-node-id=&quot;oKgEe2U5hU7yGBShdHpqxh&quot;>「游戏 + 教育」</b>项目的立项与内容策划，需对国际 3D 游戏设计大赛的竞品数据进行摸底调研。"><!--pnid:bJ6iZYaDcUS6QKMhe0Td93-->[Context &amp; Task] To support the launch and content planning of the Game + Education project, I ran a benchmark study of an international 3D game design competition.</li>
+        <li data-page-node-id="hMXKaQLVTzoXcM0i9wNUFj" data-en="[Action] Collected the full competition dataset with Python web scraping, performed cleaning, deduplication and structuring, and ran multi-dimensional analysis on trends and entries." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;ZlqpYbhr2ulNUaaCRA7qp6&quot;>【行动】</b>运用 <b data-page-node-id=&quot;5kN54ndnxCCcw8shDmlNaA&quot;>Python 爬虫</b>抓取大赛全量数据，完成数据清洗、去重与结构化处理，并针对赛事趋势、参赛作品特征进行多维度分析。"><!--pnid:jzW5XocrsZxG2sFrSpsLQd-->[Action] Collected the full competition dataset with Python web scraping, performed cleaning, deduplication and structuring, and ran multi-dimensional analysis on trends and entries.</li>
+        <li data-page-node-id="yT00bRPIfKpNcAUDXtOmpg" data-en="[Result] Delivered a visual research report that gave the team a clear content-strategy basis and supported later planning and decisions." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;DDuo6namjzuI7DJBBsjBuQ&quot;>【结果】</b>产出<b data-page-node-id=&quot;pDde5HXHybi24fD2MkByNU&quot;>可视化调研报告</b>，为项目组提供了清晰的内容策略依据，有效支撑了后续「游戏 + 教育」方向的内容规划与决策。"><!--pnid:VkjsFLC5B3xufq9BjnTJZs-->[Result] Delivered a visual research report that gave the team a clear content-strategy basis and supported later planning and decisions.</li>
+      </ul>
+    </div>
+    <div data-page-node-id="iqYaFQjnjheY9QgqDmTF6z" class="tl-item rv in">
+      <div data-page-node-id="RBLC47OpkwXsHJuSCAt4s6" class="tl-date"><!--pnid:Pl31rkqZxGbDQJ0FdwdeTE-->2023.08</div>
+      <h3 data-page-node-id="XgK0vHC1C9FWGCKjtlA5D7" data-en="VR Panorama Training Internship" data-zh="VR 全景训练实习"><!--pnid:kx9GniiKSWjTrEISs9Rd7A-->VR Panorama Training Internship</h3>
+      <div data-page-node-id="d2b6NPHPbKk0Bpod6WueMG" class="co-row"><img data-page-node-id="9Rm3eXXTlxbcmf13OQD89K" alt="晶程甲宇 DIAMONYU" class="co-logo-img lt" src="assets/img/logos/jcjy-light.png"><img data-page-node-id="FnFC68haEagJZ8jauiC6dG" alt="晶程甲宇 DIAMONYU" class="co-logo-img dk" src="assets/img/logos/jcjy.png"><span data-page-node-id="Np6HSwzQJ7n1g5bUe2FwdT" class="co-ind" data-en="EdTech / Digital Education" data-zh="教育科技"><!--pnid:ZQAN1QQfpYLnFMhid8DwcH-->EdTech / Digital Education</span></div>
+      <div data-page-node-id="iNhyG0ikmwWl9pPKQAnff5" class="co" data-en="Jingcheng Jiayu Technology (Shanghai) Co., Ltd." data-zh="晶程甲宇科技（上海）有限公司"><!--pnid:YMeaZR5xp8GHkrJGJ0l108-->Jingcheng Jiayu Technology (Shanghai) Co., Ltd.</div>
+      <ul data-page-node-id="1LPYoMi5eHWjePC0AAOoJ2">
+        <li data-page-node-id="KjRQGBlhiuuBWWFESEgOcL" data-en="[Context &amp; Task] In the VR panorama training program, I optimized the existing scene-building workflow to improve production efficiency." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;teDrAdi8mqq4xWm6gF9YsO&quot;>【情境与任务】</b>参与 VR 全景训练项目，需优化现有 VR 场景的搭建流程以提升制作效率。"><!--pnid:rK4nTwjiDfmP2Lb4EMCWjy-->[Context &amp; Task] In the VR panorama training program, I optimized the existing scene-building workflow to improve production efficiency.</li>
+        <li data-page-node-id="VdnqCkMl39eX5xKZdfLrhO" data-en="[Action] Completed intensive VR training; post-processed panoramas with Lightroom and Krpano, and drew a standardized post-processing workflow chart covering key scene-building steps." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;gEtazHcWFTJ2cSrdRHFmX4&quot;>【行动】</b>深度参与 VR 培训，熟练使用 <b data-page-node-id=&quot;MVnWY0PcNyjQDteR41M9Te&quot;>Lightroom</b> 与 <b data-page-node-id=&quot;yZSM1FiKeD7Jbu3aMUko16&quot;>Krpano</b> 完成全景图后期处理，并绘制标准化的后期处理流程图，梳理场景搭建的关键节点。"><!--pnid:ELpSyPLfuqPR397VCdgJEc-->[Action] Completed intensive VR training; post-processed panoramas with Lightroom and Krpano, and drew a standardized post-processing workflow chart covering key scene-building steps.</li>
+        <li data-page-node-id="1093vjYigIDHF1PvU4yKdg" data-en="[Result] Streamlined the VR scene workflow, cutting average build time per scene by 15% and improving team delivery efficiency." data-zh="<b class=&quot;st&quot; data-page-node-id=&quot;iAkwZFp3jGWPbgPImeVtOy&quot;>【结果】</b>优化了 VR 场景制作流程，将<b data-page-node-id=&quot;Jle35nnLDdXRuKkVPGHhcC&quot;>单场景搭建时间平均缩短 15%</b>，提升了团队整体交付效率。"><!--pnid:Fr5fZM1SYVWRXlOLKo6ENG-->[Result] Streamlined the VR scene workflow, cutting average build time per scene by 15% and improving team delivery efficiency.</li>
+      </ul>
+    </div>
+    </div>
+  </section><section data-page-node-id="9ZfPK4RyWI6nvBWB58hn8l" id="games">
+  <div data-page-node-id="7JQgjg28HjDkRP3kYuxvHb" class="sec-tag rv in"><span data-page-node-id="teDrAdi8mqq4xWm6gF9YsO" class="i18n-zh"><!--pnid:DEH7GV7V6cz68ocGaVws32-->图鉴 ·</span><span data-page-node-id="h5Vg012rObbVq0Qv5ymvAX" class="i18n-en"><!--pnid:PULP91rVFmzsjBYf42jR8D-->GAME GALLERY ·</span><span data-page-node-id="gEtazHcWFTJ2cSrdRHFmX4" data-en="Gaming History" data-zh="游戏经历"><!--pnid:v0iKqX5uiUXOEivMfbhE2g-->Gaming History</span></div>
+  <h2 data-page-node-id="MVnWY0PcNyjQDteR41M9Te" class="sec-title rv in" data-en="My Gaming Library" data-zh="游戏图鉴​"><!--pnid:vatKk5O9XymhtxBd6IvIwW-->My Gaming Library</h2>
+  <p data-page-node-id="yZSM1FiKeD7Jbu3aMUko16" class="sec-sub rv in wide" data-en="A heavy player's honest playtime ledger — otome, FPS, RPG, cards and more. Understanding players starts with being one." data-zh="重度玩家的真实时长账本——乙游、FPS、RPG、卡牌、休闲全都有。理解玩家，从成为玩家开始。"><!--pnid:Z5VPlN7H2XEiE7yLQ5jSg4-->A heavy player's honest playtime ledger — otome, FPS, RPG, cards and more. Understanding players starts with being one.</p>
+  <div data-page-node-id="HmmoMyOE6reOObn8fWhV2M" class="gfilters rv in" id="catTabs">
+    <span data-page-node-id="iAkwZFp3jGWPbgPImeVtOy" class="gtab on" data-cat="all" data-en="All" data-zh="全部​"><!--pnid:B2UXIrK01Tq1yfbQHOi7Bd-->All</span>
+    <span data-page-node-id="Jle35nnLDdXRuKkVPGHhcC" class="gtab" data-cat="otome" data-en="Otome" data-zh="乙女"><!--pnid:98nH6dEq5j5egHpSlfA3Eb-->Otome</span>
+    <span data-page-node-id="5Sfti3fRKJAgFD4RigsK5d" class="gtab" data-cat="fps" data-en="FPS" data-zh="FPS​"><!--pnid:WRHTf2wPWhzCCNpCc22zgW-->FPS</span>
+    <span data-page-node-id="7C9rdKYFeOmTpLVkXFiqDD" class="gtab" data-cat="rpg" data-en="RPG" data-zh="RPG" style="white-space:pre-wrap"><!--pnid:16uq5kOIJlyC4lr8ydbLCr-->RPG</span>
+    <span data-page-node-id="voUi3Jiaxk8lA5sOZevXH9" class="gtab" data-cat="avg" data-en="ADV / Text" data-zh="文字游戏 AVG"><!--pnid:uBJ1gO5ULXM4XmSvJEAZIE-->ADV / Text</span>
+    <span data-page-node-id="zjO3CMxSt0geGuBZcM7AGN" class="gtab" data-cat="td" data-en="Tower Defense" data-zh="塔防"><!--pnid:YHIFT7qU4iQJ5VNyz8yErH-->Tower Defense</span>
+    <span data-page-node-id="3hsfqXQDfh6qsWjunxyBXD" class="gtab" data-cat="casual" data-en="Casual" data-zh="休闲类"><!--pnid:ew1Rqqrhwha2Js35MYF4QM-->Casual</span>
+  </div>
+  <div data-page-node-id="Lt1zTr8VDEmJ0I1XWVxxA8" class="gfilters years rv in" id="yearTabs">
+    <span data-page-node-id="e2NcoEpPYrMcPhNBWqRHTR" class="gtab on" data-en="All Years" data-year="all" data-zh="全部年份"><!--pnid:1YRHlCVVk98BIcdjIqWqHZ-->All Years</span>
+    <span data-page-node-id="bYg22dCO3nRcGt3Fg3vgBw" class="gtab" data-year="2024"><!--pnid:fdJuBDsZQvKviXYXR6hxvD-->2024</span>
+    <span data-page-node-id="qO4SK6QZMFG1gUNAkTEr0H" class="gtab" data-year="2025"><!--pnid:BcA0FEn6a5RwNoQK46HXFj-->2025</span>
+    <span data-page-node-id="nvSJcrn3Fy6uaSiT59LG5c" class="gtab" data-year="2026"><!--pnid:YNhR1UPPbJ24k0YJkJScpe-->2026</span>
+  </div>
+
+  <div data-page-node-id="IdfOyPnKIjCfCAAadyRwjH" class="ggrid rv in" id="ggrid">
+    <div data-page-node-id="FULvISzhi0HYlrjofc1MBq" class="gcard" data-cat="otome" data-year="2024" style="animation:0.35s ease 0ms 1 normal both running gin">
+      <div data-page-node-id="nXeGPIcfyylsqoq8NlNmYb" class="gcover"><img data-page-node-id="H7j2hoNp6QzZdjJ6Qwcfyj" alt="世界之外" loading="lazy" onerror="this.remove()" src="assets/img/games/beyond-the-world.jpg"><span data-page-node-id="gHeJKGAu1DvDI3Gjf6eCj2" class="gemo"><!--pnid:jhNBohgJcadBlpAmoR0oqa-->🌌</span><span data-page-node-id="e8kWHqbK8zOOXDwCndIcjW" class="gtype" data-en="CN Otome · Card" data-zh="国产乙女 · 卡牌"><!--pnid:CAtQJUsaZakeWnfIM9GTdY-->CN Otome · Card</span></div>
+      <div data-page-node-id="8Yaw4ZoRLpPJEtGnlyVth4" class="gbody">
+        <div data-page-node-id="VyRrGkhC3N9by7fFHvA3Ag" class="gname" data-en="Beyond the World" data-zh="世界之外"><!--pnid:tdy26CHtfFANuK7eUqWuhT-->Beyond the World</div>
+        <div data-page-node-id="mxSvVyPmcWqYyumrKeTMzX" class="ginfo">
+        <div data-page-node-id="C2BdoG3mGJRKbZG7mzZEOd" class="grow"><span data-page-node-id="2l83CZJ80gOWKldoCI809Y" data-en="Since" data-zh="入坑"><!--pnid:UIKRx7IXySoBlYfyMOZKi5-->Since</span><b data-page-node-id="oEsmBUJbubeXDGrBHn4nQk" data-en="2024 · launch player" data-zh="2024 · 开服玩家"><!--pnid:4k5HnZplU9IKbKUTWUtp4S-->2024 · launch player</b></div>
+        <div data-page-node-id="ZLxDyZrU5sRtN3QE5xVcMo" class="grow"><span data-page-node-id="oZCAbWHanZcmUJrAi2tQdE" data-en="Playtime" data-zh="时长"><!--pnid:ZXySLD7CvTC7hk9Ii8Hjwr-->Playtime</span><b data-page-node-id="Ag5RTL1tdUkkB9m7y3ed0o"><!--pnid:RtekMrgtsBfetg6RBShdOc-->300h+</b></div>
+        <div data-page-node-id="WFpBhlWaEVpAXoajrgF0C3" class="grow"><span data-page-node-id="12hLraxcXJpuIEffioyWVW" data-en="Progress" data-zh="进度"><!--pnid:6Asfl74Bcwg0FQ5dvdKZMC-->Progress</span><b data-page-node-id="cvsPYCXoovJcD2XUsMMstL" data-en="Lv.100 · 30+ world cards" data-zh="100级 · 世界卡30+张"><!--pnid:w8ImG4LNTe2aMO6ItyHPh1-->Lv.100 · 30+ world cards</b></div>
+        <div data-page-node-id="Gj6LafE5IAiUqMZGGRXx7o" class="grow"><span data-page-node-id="oIvBq61rUqd2Y31ehMHggd" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:IxzMUONehFSFfLbLY7CNql-->Spend + Merch</span><b data-page-node-id="pYlJiX4fzyTb5d6S66v7H2"><!--pnid:xOrCLlFzI0dzgx5qbEZV5g-->¥ 2500+​​</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="IOQlRcE0fuYEU4lukPGleF" class="gcard" data-cat="otome" data-year="2024" style="animation:0.35s ease 40ms 1 normal both running gin">
+      <div data-page-node-id="YmY5cjCEfLfvn9cHTpMrCB" class="gcover"><img data-page-node-id="PHSzw01R8n778JWblD9rRe" alt="恋与深空" loading="lazy" onerror="this.remove()" src="assets/img/games/love-and-deepspace.jpg"><span data-page-node-id="8oW7PnHgW3H7xKXXLHAzvp" class="gemo"><!--pnid:dKt4Mg7Kr8tHdeKdT3ixZR-->💫</span><span data-page-node-id="m3uDwRyzoHpK0bybrU6EzT" class="gtype" data-en="CN Otome · Card" data-zh="国产乙女 · 卡牌"><!--pnid:uIS0fvhJ4TB9lNPoGU3Q8Q-->CN Otome · Card</span></div>
+      <div data-page-node-id="foBYhZsjG2eJ6JDVX9YD7d" class="gbody">
+        <div data-page-node-id="IfT9ecbNoyvcQyBzkcGxP2" class="gname" data-en="Love and Deepspace" data-zh="恋与深空"><!--pnid:jpj0EU2kSicxuoBFFPKq9R-->Love and Deepspace</div>
+        <div data-page-node-id="1AElysOICvEHoScxhx3qhM" class="ginfo">
+        <div data-page-node-id="z2yVqO8YG0sUhmSTHe0Vnu" class="grow"><span data-page-node-id="xqkaOzEZoVaBvXrurMyrHI" data-en="Since" data-zh="入坑"><!--pnid:3s2a6g7G5c0SGR6izXmVWG-->Since</span><b data-page-node-id="LBElqi2jXOdk3vRx3prnxX" data-en="2024 · launch player" data-zh="2024 · 开服玩家"><!--pnid:cy4QHAN67Yuvv6yLnjuSJ3-->2024 · launch player</b></div>
+        <div data-page-node-id="xT8YupZHkUzlHQHFyyS5hM" class="grow"><span data-page-node-id="ngD7Xdl6uizgyhrjvk9Nqa" data-en="Playtime" data-zh="时长"><!--pnid:ZeSfM7m49bTFKsSDVNwLiy-->Playtime</span><b data-page-node-id="wSDmHktipEWqrZoiKm6NIU"><!--pnid:cyQMICRaG9JK5zpJxYTmv7-->300h+</b></div>
+        <div data-page-node-id="TTfOhR9FrMCvUrIfjqMb6h" class="grow"><span data-page-node-id="zyzLgsv5WltABZdedfUFgt" data-en="Progress" data-zh="进度"><!--pnid:AUqPxOYGGNjeZyqN3ScbxV-->Progress</span><b data-page-node-id="qGO2CwWwPlXQ5TrZot537V" data-en="Lv.80 · 50+ 5-star cards" data-zh="80级 · 50+张五星卡"><!--pnid:mTvkz2RXOWt8dwo1cPxonk-->Lv.80 · 50+ 5-star cards</b></div>
+        <div data-page-node-id="jYYNwXL75LH4tOlzS814xn" class="grow"><span data-page-node-id="PXX5oANuAPEhsEczEV071s" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:PwagJ9AG3dnv7EI6L7vboX-->Spend + Merch</span><b data-page-node-id="w9ZAry5aCw8CUDCEGSCFj1"><!--pnid:tXPPD79ZFRevCWRxPgJBbW-->¥ 2000+​​</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="EgHuTJyuUknZPdT4UzhTsF" class="gcard" data-cat="otome" data-year="2024" style="animation:0.35s ease 80ms 1 normal both running gin">
+      <div data-page-node-id="Lv5QEvshRmRgEewkQ3DPFq" class="gcover"><img data-page-node-id="H4jUCtyR2fBrLDXcXgBdJn" alt="未定事件簿" loading="lazy" onerror="this.remove()" src="assets/img/games/tears-of-themis.jpg"><span data-page-node-id="3ni2dgIs0tR4MnHe763u3D" class="gemo"><!--pnid:amXKqKbYGy2mvFYfuHbIaY-->⚖️</span><span data-page-node-id="BdrgG1PvjdNhNWkkRIRuCF" class="gtype" data-en="CN Otome · Card" data-zh="国产乙女 · 卡牌"><!--pnid:Ek7VaEbPD5jpC2KjxuVdj8-->CN Otome · Card</span></div>
+      <div data-page-node-id="KvbqXviYVU2P0J1H8ClvGi" class="gbody">
+        <div data-page-node-id="roO6q7Nj1EvK6VM7Mkr6xk" class="gname" data-en="Tears of Themis" data-zh="未定事件簿"><!--pnid:j82PP1f2RjaboA1J6e3Tww-->Tears of Themis</div><div data-page-node-id="PQpzGnX4RCuHc7H2QI0lOY" class="ginfo">
+        <div data-page-node-id="eD6HKn3WTOlAe3fAbzyj6v" class="grow"><span data-page-node-id="AA1ndCprZ15JnN1ZcioIR4" data-en="Since" data-zh="入坑"><!--pnid:2vbaBXoUW2Cq3uENIJZi7v-->Since</span><b data-page-node-id="Lh4Aej9CBJIBE8aTfrmv5W"><!--pnid:TKLrMGpyBjpn5Wmt8I54fr-->2024</b></div>
+        <div data-page-node-id="HRz5ApjIj9ZOLB8MCvTvQo" class="grow"><span data-page-node-id="dMEIQJ73xdl3x7ukGSo4yA" data-en="Playtime" data-zh="时长"><!--pnid:XurHVbOsr9LYAwA2izbjzK-->Playtime</span><b data-page-node-id="4bgjbUmOA2UAmwXPn1FvAx"><!--pnid:0hCGQS3hkmyiozXATknXN9-->300h+</b></div>
+        <div data-page-node-id="xcgechvwclcsb8vCEo1icX" class="grow"><span data-page-node-id="MZuECmrl6PxH4cV3fGxqpd" data-en="Progress" data-zh="进度"><!--pnid:eP43rw8FVVNigNVKOEkhWW-->Progress</span><b data-page-node-id="Xe3Cq9np1LqmBUjyL87bWS" data-en="Lv.80 · 30+ SSR &amp;amp; SSS cards" data-zh="80级 · 30+张SSR​​​"><!--pnid:zkzalJiFGvV4mBDBXa3H1P-->Lv.80 · 30+ SSR &amp; SSS cards</b></div>
+        <div data-page-node-id="iOMVNImQOtuMR1QrPXsimE" class="grow"><span data-page-node-id="XFQq85DKLx4Ff6qwRQRV5z" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:iQt5rZ3ixheIcTgBpbyHuE-->Spend + Merch</span><b data-page-node-id="FmyTE2PH0ZF1tKVlSptTRE"><!--pnid:3phy0eASZbBOm7YsD5RL1Z-->¥ 1500+</b></div>
+      </div>
+        
+      </div>
+    </div>
+    <div data-page-node-id="IohJNqt5kyMDigqry0ZVOC" class="gcard" data-cat="otome" data-year="2024" style="animation:0.35s ease 120ms 1 normal both running gin">
+      <div data-page-node-id="cGJMG9NGyHQq92eOWFvHLp" class="gcover"><img data-page-node-id="QS7gcZdfMr6Ew8CckpQmWn" alt="光与夜之恋" loading="lazy" onerror="this.remove()" src="assets/img/games/light-and-night.jpg"><span data-page-node-id="Y3rmUFFpi4poAdwEQshUGP" class="gemo"><!--pnid:5TXuYYO506X0fjIw9DWkFI-->🌙</span><span data-page-node-id="BK7drJjNY14jUp2PNCdRkE" class="gtype" data-en="CN Otome · Card" data-zh="国产乙女 · 卡牌"><!--pnid:9nkrM9wkNZNDUwVcKc1rbp-->CN Otome · Card</span></div>
+      <div data-page-node-id="cH3fA8bAmORth7mYZ4HH8F" class="gbody">
+        <div data-page-node-id="4JQ7vK7DbhT1z07RNm9u8y" class="gname" data-en="Light and Night" data-zh="光与夜之恋"><!--pnid:kX65t7CLPdHo1d2oyrhYZF-->Light and Night</div>
+        <div data-page-node-id="gvOavZqazXiydTV1G9DQzz" class="ginfo">
+        <div data-page-node-id="1ftiA2NDWiwOpuB6GrxV1x" class="grow"><span data-page-node-id="MWgxmqYMklryUWMqYGsDkh" data-en="Since" data-zh="入坑"><!--pnid:bOKP5hunPruvNsJHkv86rx-->Since</span><b data-page-node-id="VmaBz8h8Qzm644y1CFu5pM"><!--pnid:iFdfJZQ2czUWy04vrxvdis-->2024</b></div>
+        <div data-page-node-id="0XiOLle5WzSPyNzCXwXDQj" class="grow"><span data-page-node-id="58TL1aupHKJS0vfrjEowSW" data-en="Playtime" data-zh="时长"><!--pnid:lo1rHWq4RPaXrvEEAwjlgC-->Playtime</span><b data-page-node-id="8YR2pr0XVgoJmMenDiI24x"><!--pnid:c11BPnQ5gX7Em15Y5N7oNn-->200h+</b></div>
+        <div data-page-node-id="Enxn9eTsrVUPYGeDGQ5GIu" class="grow"><span data-page-node-id="cclAXrWvitI0WqtrbiqK83" data-en="Progress" data-zh="进度"><!--pnid:k4DBpNTpWJdRWbS86nrnEk-->Progress</span><b data-page-node-id="vRRSHDtFYLC2oNjTpKlN6Y" data-en="Lv.60 · 20+ 6-star cards" data-zh="60级 · 20+张六星卡"><!--pnid:mwh66qDeh9ipBAtg4sroQb-->Lv.60 · 20+ 6-star cards</b></div>
+        <div data-page-node-id="BbP4TQ12g3xKtITB0nbpwo" class="grow"><span data-page-node-id="B2TKhKfIZarW0uwf1FvM7r" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:25RccPMgD6FKsXkYUWCFnr-->Spend + Merch</span><b data-page-node-id="dHBcUnGpOGGsL2SfCn81o8"><!--pnid:3jHNrvcUxABSejGjIBQmJX-->¥ 500+</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="fW5tQEaQw92kSpuudpAQfr" class="gcard" data-cat="otome card" data-year="2024" style="animation:0.35s ease 160ms 1 normal both running gin">
+      <div data-page-node-id="VSDTUdvKEdmSXDpb2jyFEu" class="gcover"><img data-page-node-id="OPsoNvZn6ZU4b1fPAoZZtl" alt="代号鸢 / 如鸢" loading="lazy" onerror="this.remove()" src="assets/img/games/ashes-of-the-kingdom.jpg"><span data-page-node-id="EywF0kVnf4GPEtaOBi4CEQ" class="gemo"><!--pnid:MWLaEw7CTPTrqZ3zs1EPkI-->🪶</span><span data-page-node-id="nvcOI0nS6kkCwapCsnHk3D" class="gtype" data-en="Otome-oriented Card" data-zh="国产乙女向卡牌游戏​"><!--pnid:4FBd9P3wBPT92ujX1MLPKe-->Otome-oriented Card</span></div>
+      <div data-page-node-id="7RHdDpH01oPp0pTE3SiCHi" class="gbody">
+        <div data-page-node-id="K2Xonn6xiBUjEhN7NMW698" class="gname" data-en="Ashes of the Kingdom" data-zh="代号鸢 / 如鸢"><!--pnid:kgWni710il0gXRxZf88bc7-->Ashes of the Kingdom</div><div data-page-node-id="CDXPb2tCaPKDbAD4ADNCkG" class="ginfo">
+        <div data-page-node-id="EVkN5t3blVpnDSY8aAmQFD" class="grow"><span data-page-node-id="hLJlVxgDLrjw4qKsoGfrPj" data-en="Since" data-zh="入坑"><!--pnid:Zfl9vl9IoCh2ZINoccAJ0l-->Since</span><b data-page-node-id="fQuRDSGk3BnjUOAX6gQdy8"><!--pnid:IjkKd0qZ2LELNIziJ0FT3t-->2024</b></div>
+        <div data-page-node-id="99CPdDoc7dOb5YhIPychJy" class="grow"><span data-page-node-id="zI1AL30u62328Fj3kblTYS" data-en="Playtime" data-zh="时长"><!--pnid:TxIM9ioibVOwfqhWU81Mhe-->Playtime</span><b data-page-node-id="1Wgu92QAl0Vk1ASLcmaqmN"><!--pnid:DCLAsPORSiFqJF6qQ1HXEG-->100h+</b></div>
+        <div data-page-node-id="XROmhpBF7rXKn5iYBAcbEc" class="grow"><span data-page-node-id="lZjZFuR3dzzHbcTAwJjepb" data-en="Progress" data-zh="进度"><!--pnid:3hQm4xwtMlJNIX8pOTvWSA-->Progress</span><b data-page-node-id="ojzbl5GB4yilKyzEYVcogr" data-en="Lv.50 · 20+ SSR gold cards" data-zh="50级 · 20+张SSR​​"><!--pnid:Qsr5LrAP67dGpCs28guxSv-->Lv.50 · 20+ SSR gold cards</b></div>
+        <div data-page-node-id="Yao0YJ41HMAnjW2st1fGQw" class="grow"><span data-page-node-id="IVp6qQU4CBdPww4aBhJlXN" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:hnRKCYt8Thp1kuPgvS9onD-->Spend + Merch</span><b data-page-node-id="eEFN4seMQ71dE26CD4P6Ta"><!--pnid:aNN2neXOdzQKdEQvR4z9sl-->¥ 200+</b></div>
+      </div>
+        
+      </div>
+    </div>
+    <div data-page-node-id="zDK9CGmPDgrhwvE5Fl5o4Q" class="gcard" data-cat="rpg" data-year="2024" style="animation:0.35s ease 200ms 1 normal both running gin">
+      <div data-page-node-id="SlSbj2fZmeJm6pGJLfglhj" class="gcover"><img data-page-node-id="5tDJcquwl96N6WvSXTuO2j" alt="重返未来1999" loading="lazy" onerror="this.remove()" src="assets/img/games/reverse-1999.jpg"><span data-page-node-id="DbMyvlvl1VbAIzuATik7cA" class="gemo"><!--pnid:1ikvegy9RIzLQJwsXq6KIE-->⏳</span><span data-page-node-id="8VqrMDge6azLi1ZmrTeA9s" class="gtype" data-en="RPG" data-zh="RPG 卡牌" style="white-space:pre-wrap"><!--pnid:cmW1nqn2H1JkewP6SMW72l-->RPG</span></div>
+      <div data-page-node-id="BatZFMTUya8EDUZel1tCxY" class="gbody">
+        <div data-page-node-id="Eqwbl9RiuDPHtTK9PX70s9" class="gname" data-en="Reverse: 1999" data-zh="重返未来1999"><!--pnid:nN9rEo42svIhhVZrbjaqs0-->Reverse: 1999</div>
+        <div data-page-node-id="ATn38OPbgUP5UlGZ5lzpek" class="ginfo">
+        <div data-page-node-id="UmSx0HIMLbKFVBWZDd7H69" class="grow"><span data-page-node-id="LBgLwm8cr2poOGF3PVNBJG" data-en="Since" data-zh="入坑"><!--pnid:4eMvJh6nUbKA1MuiaefCi7-->Since</span><b data-page-node-id="CXEBd11KL73BeAF8k09GAH"><!--pnid:yt8LU55NZ1BIesG7QYxkou-->2024</b></div>
+        <div data-page-node-id="JzWMFFdASPPoswnPFRe60H" class="grow"><span data-page-node-id="NEdcLzNaiLyeyaS7xaTT2i" data-en="Playtime" data-zh="时长"><!--pnid:L3ZeGgrr5SPGROix6NIM2Q-->Playtime</span><b data-page-node-id="UB3dlCWYv44W0iyitENVA0"><!--pnid:kCkfL1vJ076kdAX83XVdJF-->300h+</b></div>
+        <div data-page-node-id="wfNBF8xUA6olBwX7AUUqdh" class="grow"><span data-page-node-id="4Lqx9vB5O0HSRh8LqPurep" data-en="Progress" data-zh="进度"><!--pnid:uPhjwBXvVj2LPh984NnEzi-->Progress</span><b data-page-node-id="RHe23SuzjuiyGtbDicdsGT" data-en="Lv.75 · 20+ 6-star cards" data-zh="75级 · 20+张六星卡"><!--pnid:SovNMmmisO0z1opsS3MhYn-->Lv.75 · 20+ 6-star cards</b></div>
+        <div data-page-node-id="kP8YnoKBhj8OsOwEssuMH6" class="grow"><span data-page-node-id="hi4j5FIjH5oYqTXvxTIPjA" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:NNBnl90ipMQFhGEWLu1tIb-->Spend + Merch</span><b data-page-node-id="MgJBRYzZfQRREotwmhi03z"><!--pnid:TXv15DUiOsjNcnDDOQRJyK-->¥ 500+</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="W2ALdTvanMPJZZsJ3Q6rZi" class="gcard" data-cat="fps" data-year="2025" style="animation:0.35s ease 240ms 1 normal both running gin">
+      <div data-page-node-id="e8Sq2gZ4KFizkVkMYiUr1o" class="gcover"><img data-page-node-id="OJLPZKWxu9BTX8pkp1qBn2" alt="无畏契约" loading="lazy" onerror="this.remove()" src="assets/img/games/valorant.jpg"><span data-page-node-id="1zIQxGH35sV2TqDBCqoPUB" class="gemo"><!--pnid:UIR9qdiOIGWMEFEt9waguw-->🔫</span><span data-page-node-id="zH09yLJ7U1CVvzaLXBPX1Q" class="gtype" data-en="FPS" data-zh="FPS"><!--pnid:p1WSHPsHuF1NqgoteTiiBe-->FPS</span></div>
+      <div data-page-node-id="il7uISUIvufezXGHbQsRtB" class="gbody">
+        <div data-page-node-id="IRR3ylAG53F9MtRutTmSCi" class="gname" data-en="VALORANT" data-zh="无畏契约"><!--pnid:k9v4pztp3VYPFKTLkqADsE-->VALORANT</div>
+        <div data-page-node-id="Rk1BXemUxmweDn2bWyry1J" class="ginfo">
+        <div data-page-node-id="91xPntsBZoICCpbU2IM3qq" class="grow"><span data-page-node-id="TUn5rJwWIBeAAxB6HupGqP" data-en="Since" data-zh="入坑"><!--pnid:KOqbR9JJ49itbXli5FizkU-->Since</span><b data-page-node-id="ca1KSNsc9ouXW5FFyKQuL0"><!--pnid:Uwevrvhe6ysXEJ9X1qtc7M-->2025</b></div>
+        <div data-page-node-id="ftqHcLNJFPnEKTG2kmTCKS" class="grow"><span data-page-node-id="HTVl4H6PHp9NYXlc7I4uPA" data-en="Playtime" data-zh="时长"><!--pnid:yNyCBnBC0Z9LeZhaGPThWt-->Playtime</span><b data-page-node-id="Uxpn6t7MzhngAm5TrsYX2s"><!--pnid:cxtQGfuWCLbbDJiJf2PvKf-->150h+</b></div>
+        <div data-page-node-id="ChzX0rtpi34tYeyY5eDImi" class="grow"><span data-page-node-id="sxdg1xw4FYyjmogyNGAMus" data-en="Progress" data-zh="进度"><!--pnid:rTXu64KVbbFcftxw76krK1-->Progress</span><b data-page-node-id="79A2uFKCTGLeeYEKnPGtRV" data-en="Rank Silver · Lv.50" data-zh="段位白银 · 50级"><!--pnid:fODkcRZeXw9Yp0WYdQfz4j-->Rank Silver · Lv.50</b></div>
+        <div data-page-node-id="ugKlwjhuCcz7tHRbgeZsjL" class="grow"><span data-page-node-id="kCEhzJxwQBQ6yG4cTJNrbe" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:jkO0Fr14MDf5N247hid1mX-->Spend + Merch</span><b data-page-node-id="DvGI8q6ulPXXdV5XJhZed7" data-en="Skins ¥2000+" data-zh="皮肤 ¥ 2000+"><!--pnid:NWRyBFNdSQGY21dO5bX4Yz-->Skins ¥2000+</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="r8KF19K6aS1orq5rFvRXF6" class="gcard" data-cat="otome" data-year="2025" style="animation:0.35s ease 280ms 1 normal both running gin">
+      <div data-page-node-id="yYzO6YHhNcLALFVKfY0STa" class="gcover"><img data-page-node-id="sP0DHUsUtLC7Njsc91tVxX" alt="我的超级现充生活" onerror="this.remove()" src="assets/img/games/my-normie-life.jpg"><span data-page-node-id="ekI7ADyCwm0chRfmHsYxn4" class="gemo"><!--pnid:4csT4dccc8iPR4WSSkbKXN-->🏫</span><span data-page-node-id="a1Jqna7H1pvgFQBVkfMhDu" class="gtype" data-en="JP Otome" data-zh="日乙 · 视觉小说
+"><!--pnid:Qal6Xqh7sqE7rEuL8DgHMl-->JP Otome</span></div>
+      <div data-page-node-id="gyxnrNdLANR7julMEFwADY" class="gbody">
+        <div data-page-node-id="0eoPYWOzo4GS7UJjAFKjx1" class="gname" data-en="My Super Normie Life" data-zh="我的超级现充生活"><!--pnid:eBbsFxUBUNbAHW9uhhfNZ1-->My Super Normie Life</div>
+        <div data-page-node-id="Txw97HtEb0ma6wpFWoRFu6" class="ginfo">
+        <div data-page-node-id="YH9P9RPVJWt831IsLGeN3s" class="grow"><span data-page-node-id="gwZt4IpmlvSzPfJ1XYIxeL" data-en="Since" data-zh="入坑"><!--pnid:cbZQzxy0RgCXjvk38xqvCi-->Since</span><b data-page-node-id="L0AjGIcBu19HeEJlsSNtjS"><!--pnid:cUrr5HvR52SaBbwYy43ofB-->2025</b></div>
+        <div data-page-node-id="jlfxwGgR4w7v9WlDyApJBL" class="grow"><span data-page-node-id="WTpbi28QbvQwSqaBjZJcxU" data-en="Playtime" data-zh="时长"><!--pnid:d8EwXstsrCS4u4QDpn426t-->Playtime</span><b data-page-node-id="f5RCq2BNJVf3ooiQuPoxlQ"><!--pnid:64CtFnsyFIsgZtpJutg9al-->15h+</b></div>
+        <div data-page-node-id="VGMriAmMvo92xnw0GBkwLn" class="grow"><span data-page-node-id="qoeATZZClrW4ajFmk75eA7" data-en="Progress" data-zh="进度"><!--pnid:llDflUng3L9rmqq9AW5WsJ-->Progress</span><b data-page-node-id="fDO6xhE0xmARIrJ6O286vU" data-en="Cleared in 15h" data-zh="15h 通关"><!--pnid:NXGs2GCRxq3kov2HLngMXH-->Cleared in 15h</b></div>
+        <div data-page-node-id="MA90eBjGWAUkWMdeEVAKOu" class="grow"><span data-page-node-id="mfGHpt0bpdWpxHoiERLsmc" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:seOp0CtyV8luPu2ZphDJ9S-->Spend + Merch</span><b data-page-node-id="zpNcUVq1EYCxPkKkGyhXI3" data-en="Steam premium title" data-zh="steam买断制"><!--pnid:RnQyZccvCElOew3xRMyXHY-->Steam premium title</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="x45lYfx9SrZeNr7te2OySD" class="gcard" data-cat="otome" data-year="2025" style="animation:0.35s ease 0ms 1 normal both running gin">
+      <div data-page-node-id="5Rg0M89ShvnCur5pDS9hQC" class="gcover"><img data-page-node-id="4n41IGgEOkavNScLbgMDIa" alt="亿万恋人" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src onerror="this.remove()" src="assets/img/games/billionaire-lovers.jpg"><span data-page-node-id="U2z7zXD80EmJCnC6LvdjBH" class="gemo"><!--pnid:fanegPtWPDhpjK2C1JBbW4-->💘</span><span data-page-node-id="XpZyAu1vC7FvslGkrLDu6l" class="gtype" data-en="JP Otome" data-zh="Steam 视觉小说"><!--pnid:1GyDky21qAJWN4mYQ87Zeg-->JP Otome</span></div>
+      <div data-page-node-id="2s5JCXM8kDPpB4tDxmrEJg" class="gbody">
+        <div data-page-node-id="u03rLfGz9yAXCNCTGKFhUY" class="gname" data-en="Billionaire Lovers" data-zh="亿万恋人"><!--pnid:bNjc1i5NY9pkDDg0Dlguh5-->Billionaire Lovers</div>
+        <div data-page-node-id="LoDDYOlyh6Qq6CyDtfHfWA" class="ginfo">
+        <div data-page-node-id="mhxJUN8XMzLXLGNdcet2f8" class="grow"><span data-page-node-id="tdfsrMczqBRhHMTyWH9sVz" data-en="Since" data-zh="入坑"><!--pnid:zCBFVUMZGgC3BrHf3EWLfn-->Since</span><b data-page-node-id="h6lS9ellQAj92FR0kP96be"><!--pnid:NdKZ5sV3wgAqEMRl1WfCVz-->2025</b></div>
+        <div data-page-node-id="ULsJA0mCiQyUFxjeAqS8la" class="grow"><span data-page-node-id="GGWbZDbSOtat4RsXXeqGEh" data-en="Playtime" data-zh="时长"><!--pnid:eluAb9r6Z4ips39PXzggUK-->Playtime</span><b data-page-node-id="3h0bq4BTtm615vW0rendBR"><!--pnid:nIe7w7Vah03YchslD7tLxj-->5h+</b></div>
+        <div data-page-node-id="lbdbmghOWJZr23KRwtss74" class="grow"><span data-page-node-id="H620uTQv4qCA7423zPFCN9" data-en="Progress" data-zh="进度"><!--pnid:mhJjsC7yojOslfeaNawSKV-->Progress</span><b data-page-node-id="BkXtI9buTnWZxguwW7e39o" data-en="Cleared in 5h" data-zh="5h 通关"><!--pnid:P4AzEhIFzCdMFuTsV5kEWk-->Cleared in 5h</b></div>
+        <div data-page-node-id="pBBsVy9u7plYaytSSF6ynE" class="grow"><span data-page-node-id="GzOszjE7oSDGaYG4KytrqB" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:aBNt4kxz8vOijlJyiLdfcA-->Spend + Merch</span><b data-page-node-id="MigOaWydJETWBdlC1Y2v7a" data-en="Steam premium title" data-zh="steam买断制"><!--pnid:TnGZyw4YgUJ2mQACC1Si8Q-->Steam premium title</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="AB0cy447hAfokozuYUGekJ" class="gcard" data-cat="casual" data-year="2025" style="animation:0.35s ease 40ms 1 normal both running gin">
+      <div data-page-node-id="CSOLExPlyfRzPq7hoasllZ" class="gcover"><img data-page-node-id="2KRji31XucFYTmWUmZycAF" alt="雀魂" loading="lazy" onerror="this.remove()" src="assets/img/games/mahjong-soul.jpg"><span data-page-node-id="MIxIDbiQ2O7B3sACGOlUmH" class="gemo"><!--pnid:nfD0GAqQim1DCPPBuYdCnq-->🀄</span><span data-page-node-id="OJD5ChpfaoBTlGArRaf6fm" class="gtype" data-en="Mahjong Casual" data-zh="麻将休闲类游戏"><!--pnid:AqS9KF0bk7nbK6Q44NskQO-->Mahjong Casual</span></div>
+      <div data-page-node-id="SdKsGKCvucE8sE1MGWJzSg" class="gbody">
+        <div data-page-node-id="kzDEZApPSdNskk4FbCDXLO" class="gname" data-en="Mahjong Soul" data-zh="雀魂"><!--pnid:HEAd0aM30RFH4cNMBv3iOs-->Mahjong Soul</div>
+        <div data-page-node-id="5JAOvLehyN81HGTfWF9ePX" class="ginfo">
+        <div data-page-node-id="eipDZyiu9KG8ekgYNGj3lA" class="grow"><span data-page-node-id="JEGHzrBdro8EuT4CcY95nc" data-en="Since" data-zh="入坑"><!--pnid:2CklONfMWhLRq3hjRU4Irl-->Since</span><b data-page-node-id="DKGa9WeG2SRWPLBxaaaACj"><!--pnid:h5X9cnZk1WkAS1P0jcui16-->2025</b></div>
+        <div data-page-node-id="tZUWeSI1EYEAGIeQ46FUWv" class="grow"><span data-page-node-id="5XyRFUqipy8An4RTbSgfac" data-en="Playtime" data-zh="时长"><!--pnid:cslHWNAbAqkqOBdgugPf7V-->Playtime</span><b data-page-node-id="4fy5UjjHgzK6nPKRN2PVJ1"><!--pnid:ij4FwWX2AdFGBvcwTielTA-->30h</b></div>
+        <div data-page-node-id="eP8qZVK0pkphGsd5ty7fRA" class="grow"><span data-page-node-id="xL3J99eMw2tnuFBnyyD1gq" data-en="Progress" data-zh="进度"><!--pnid:YTrUl0OffNaPRlvkXniqE5-->Progress</span><b data-page-node-id="s4qCrlThOBZcrembNokvvZ" data-en="Rank: Mahjong Sage" data-zh="段位雀士"><!--pnid:vrYkkmiTBBnQNOLc6Xklo4-->Rank: Mahjong Sage</b></div>
+        <div data-page-node-id="zUWAkouOMQivboWxS6Yzut" class="grow"><span data-page-node-id="Mbqeaq8ohcq0lREmsyitBR" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:C2XRB4p8HNMMg1yuS2pYgx-->Spend + Merch</span><b data-page-node-id="NS6UFsixpBKYrR9IZbk0mJ" data-en="Steam indie" data-zh="steam独立游戏"><!--pnid:89tQf260p2tqNymFxM9YZm-->Steam indie</b></div>
+      </div>
+      </div>
+    </div>
+    
+    <div data-page-node-id="woZkvHdbb4840hZibXHoWq" class="gcard" data-cat="td" data-year="2026" style="animation:0.35s ease 80ms 1 normal both running gin">
+      <div data-page-node-id="5hqutGDHaxBvCdu8Z51Mp7" class="gcover"><img data-page-node-id="SU03J8b5349H0z9VQjJTQl" alt="明日方舟" loading="lazy" onerror="this.remove()" src="assets/img/games/arknights.jpg"><span data-page-node-id="TBzrSze6C4UNDSS6AaDblG" class="gemo"><!--pnid:9nGTbP1iPZwM1JZlBmOkrC-->⚓</span><span data-page-node-id="PGR3nd1Cm7GlpzrngNUFxI" class="gtype" data-en="Tower Defense" data-zh="塔防"><!--pnid:iH4GioxhhJ7DWtRXcL3hc8-->Tower Defense</span></div>
+      <div data-page-node-id="NthAx9Bl6QujGHr3ZFjL3w" class="gbody">
+        <div data-page-node-id="uGnB2jAPDgPEypZVDeDQHz" class="gname" data-en="Arknights" data-zh="明日方舟"><!--pnid:LC36kFz237OzXuSzdn1g6C-->Arknights</div>
+        <div data-page-node-id="R6RRtHddYFAz2zFwoGvEEc" class="ginfo">
+        <div data-page-node-id="8iDNTBYvP44hRpQiUJmyma" class="grow"><span data-page-node-id="Qru8Y0dB4aCgi1dLkTQD9e" data-en="Since" data-zh="入坑"><!--pnid:hzyggSGuNElZsDIEEJNtfS-->Since</span><b data-page-node-id="5hNCrv5FIbVF4nYPz0XAxK"><!--pnid:3Nm45RW68p9K03wDXPBl0J-->2026</b></div>
+        <div data-page-node-id="264ozjrkSkwg6NkQFJrtIQ" class="grow"><span data-page-node-id="iKZFZCbbdgBWwGhjUANO1x" data-en="Playtime" data-zh="时长"><!--pnid:fRLIEvHzARtV8XxTdHavwH-->Playtime</span><b data-page-node-id="cFJ3HRgJOz4d3jW12LcFPd"><!--pnid:aCRTN2yIQSB02riix7jqgV-->50h+</b></div>
+        <div data-page-node-id="6PMspnMZnPxa3zO792GcJm" class="grow"><span data-page-node-id="d7aSMvRUHn5YOxxt8vfwea" data-en="Progress" data-zh="进度"><!--pnid:0W2joMnKmjLlgiszPF0mgm-->Progress</span><b data-page-node-id="WC3XRW7V8gQPpOlq4xFoBh" data-en="Lv.10-20 · newbie" data-zh="10-20级入坑萌新"><!--pnid:jpgrad2pe0XKgSHcAGyBI9-->Lv.10-20 · newbie</b></div>
+        <div data-page-node-id="FeCOSli8uGXORMEgJP1cGH" class="grow"><span data-page-node-id="OJUSHkIR2x5G07LMEZZtSu" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:Bb1haUWUr1KffiwDvf4whS-->Spend + Merch</span><b data-page-node-id="tqT3yC0mSEiMgG9fsBlaBT"><!--pnid:20pAcSQPlAyFyxlvr6RWS3-->/</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="pPAo8Svznbh7ufwImZxhtJ" class="gcard" data-cat="rpg" data-year="2026" style="animation:0.35s ease 120ms 1 normal both running gin">
+      <div data-page-node-id="kk6vZeodcFYbrpawGqNP9m" class="gcover"><img data-page-node-id="YLFic4kB4u2mQGW9xNJGfv" alt="明日方舟：终末地" loading="lazy" onerror="this.remove()" src="assets/img/games/arknights-endfield.jpg"><span data-page-node-id="HEIl23WDNONPpTbv2EXWkN" class="gemo"><!--pnid:37Np0tijRYAqSmBTmDZiKh-->🏜️</span><span data-page-node-id="nCAGc2iCY25c7LpJ07MyCa" class="gtype" data-en="RPG" data-zh="RPG 开放世界"><!--pnid:uemtDyejp9F4pUx0ooasR2-->RPG</span></div>
+      <div data-page-node-id="uH5FxXHG2Kovds4RGbBn71" class="gbody">
+        <div data-page-node-id="3O7GibosxJirhN7mq2gAh5" class="gname" data-en="Arknights: Endfield" data-zh="明日方舟：终末地"><!--pnid:Gxx0G5IEYjIvlmG97au9YF-->Arknights: Endfield</div>
+        <div data-page-node-id="xR6zBazSIH8aVwUk6i4RPM" class="ginfo">
+        <div data-page-node-id="I5BCXwGOWjDxrXvTN7FvrP" class="grow"><span data-page-node-id="3p2LsUHut4Hc44ePAptPZO" data-en="Since" data-zh="入坑"><!--pnid:Nyu3Tc8Ks7DKRSxg9hZ8Qx-->Since</span><b data-page-node-id="WmaCgvSa9vCMsRbJn4hb3C"><!--pnid:PeubIaAabHahbYKeaKVTQm-->2026</b></div>
+        <div data-page-node-id="SQERgerL9Xa6mxVwbI6B5W" class="grow"><span data-page-node-id="cslA4rTZNSWL9QcdDMEkPt" data-en="Playtime" data-zh="时长"><!--pnid:qEqpRxc9Mu82H9u7qJ3qOQ-->Playtime</span><b data-page-node-id="IdyuTr6z7Dm33GkYHKf1IR"><!--pnid:agGfkQnHAztSnHojYk1axx-->50h+</b></div>
+        <div data-page-node-id="J8OPUStHIfVJalTVDERTBc" class="grow"><span data-page-node-id="BAO51RiMNyZg5H47Cz9zj3" data-en="Progress" data-zh="进度"><!--pnid:N4RN4JS9wxeUZzMf6r4jbL-->Progress</span><b data-page-node-id="qpacPq1SrRohIuGTfOGnyh" data-en="Lv.10-20 · newbie" data-zh="10-20级入坑萌新"><!--pnid:mbiXmbqD3VYiJStrKP2N1Y-->Lv.10-20 · newbie</b></div>
+        <div data-page-node-id="rdoz65pYxbozN0LyD1eKgm" class="grow"><span data-page-node-id="o8YWoFZJ4G3lakGrY8HyrA" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:Rs8iAAFB6Ul4obaRXXDKUn-->Spend + Merch</span><b data-page-node-id="wOif3fe473D6Xe5LMXlOyt"><!--pnid:AdllODqfH80v9Rrvuo7yCP-->/</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="uLaTpO5HoSTKBp57AZh0AZ" class="gcard" data-cat="avg" data-year="2026" style="animation:0.35s ease 160ms 1 normal both running gin">
+      <div data-page-node-id="DOzjUYh3bQjfHyJoauIssn" class="gcover"><img data-page-node-id="SE0PguWJOzqc2R2wEgdCm5" alt="弹丸论破" loading="lazy" onerror="this.remove()" src="assets/img/games/danganronpa.jpg"><span data-page-node-id="Ky4WbyDO278eLZdluqOk9Q" class="gemo"><!--pnid:FshBgkogCVbP2n3PnKdA88-->🎯</span><span data-page-node-id="SdOmJgkfeYANGGWTcRpjHa" class="gtype" data-en="ADV / Text Game" data-zh="文字游戏 AVG"><!--pnid:UMvVh9udUjoM85fwfV9plI-->ADV / Text Game</span></div>
+      <div data-page-node-id="EODhGBB0SR6EVfWyzbK3bI" class="gbody">
+        <div data-page-node-id="i2xGJWkpYunwdhYWv2UTMR" class="gname" data-en="Danganronpa" data-zh="弹丸论破"><!--pnid:ItY4Nn1ovhwYCPsZwVfFNr-->Danganronpa</div>
+        <div data-page-node-id="PSiUQZZosAAQlegZULMNrM" class="ginfo">
+        <div data-page-node-id="SBxZMkkBaGzm2zjjhm8IFq" class="grow"><span data-page-node-id="1dLPACPOT52ACqQvqmnuyd" data-en="Since" data-zh="入坑"><!--pnid:GtNqUcyItcPniJEPJUA1SN-->Since</span><b data-page-node-id="AiPOrX7vXN5uqkBMju3NWX"><!--pnid:KztoGw2vRM5YCsY7d2nEso-->2026</b></div>
+        <div data-page-node-id="JIMeKCMfqsGc0NEQz3xcur" class="grow"><span data-page-node-id="ZGgdtvixUKRFDQsHMkUsea" data-en="Playtime" data-zh="时长"><!--pnid:RWB7IWTKxXbsxw0qT417jL-->Playtime</span><b data-page-node-id="qfLvYas9CrEOQJYvRXhAGS"><!--pnid:K7CyyTVlIiVhk3QXlUdqm3-->15h+</b></div>
+        <div data-page-node-id="eEhggNaMj2EC51qgC5XenP" class="grow"><span data-page-node-id="oDFGbGLItbfPU38EEheOyB" data-en="Progress" data-zh="进度"><!--pnid:MLH52ITRyTuXYdLlxR0opS-->Progress</span><b data-page-node-id="CLROcBQdUdQE91FcKUPFss" data-en="Cleared in 15h" data-zh="15h 通关"><!--pnid:YFPdA6WkRtQk1jatIHGc35-->Cleared in 15h</b></div>
+        <div data-page-node-id="qoRkPLxdQSxBxVWIakvqyO" class="grow"><span data-page-node-id="2glRS8SuoIuPEKYEgULEuA" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:wSSjTa3BviuoRaNh8myWcf-->Spend + Merch</span><b data-page-node-id="esP9WvHo6NOB41gMvWwPHj" data-en="Switch premium title" data-zh="switch买断制独立游戏"><!--pnid:bq6UknaTckpZ7QELeaAjrt-->Switch premium title</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="HerpqbmJukamQoHJ6fzstS" class="gcard" data-cat="avg" data-year="2026" style="animation:0.35s ease 200ms 1 normal both running gin">
+      <div data-page-node-id="vJWjBIujHDoivdFUahyGoA" class="gcover"><img data-page-node-id="9LZzanpAV8l9FMWC2avmUv" alt="逆转裁判" loading="lazy" onerror="this.remove()" src="assets/img/games/ace-attorney.jpg"><span data-page-node-id="5HoCPY8PEY4IMU5PSC4AuW" class="gemo"><!--pnid:ETWruhRYqLQXbHJhRTTWPI-->🔍</span><span data-page-node-id="KabT6FVYFjh4t4Q4P7rrUU" class="gtype" data-en="ADV / Text Game" data-zh="文字游戏 AVG"><!--pnid:FZhXCOIeH9f4FR8RpOct9y-->ADV / Text Game</span></div>
+      <div data-page-node-id="MxDA43wdejnUuAIaFVkXDk" class="gbody">
+        <div data-page-node-id="pysT4TNbFIHcFlhMHhkoTP" class="gname" data-en="Ace Attorney" data-zh="逆转裁判"><!--pnid:Gv1aQpR4cu94EsjIuX5Ewx-->Ace Attorney</div>
+        <div data-page-node-id="x69nP0X9OInqOKmKU5GsSx" class="ginfo">
+        <div data-page-node-id="HxWbzKGgnCzIkD0asVHbC5" class="grow"><span data-page-node-id="1AAzb4B6sPNic6aNEoHyxG" data-en="Since" data-zh="入坑"><!--pnid:sgU8t0idolbIDhxgmTcXAq-->Since</span><b data-page-node-id="cLoUWBwnmO5o6tAKQPrfyw"><!--pnid:2XpJ2iTIM65wSoJF8ALGAT-->2026</b></div>
+        <div data-page-node-id="GlqolAPqjFTXjtK3EqFELQ" class="grow"><span data-page-node-id="HVeAH7RrINhmalFoJ8gpvg" data-en="Playtime" data-zh="时长"><!--pnid:KbISJjcEgncUBsYelyPQms-->Playtime</span><b data-page-node-id="c1aNIEv9ZULbElvbz9uYmD"><!--pnid:LcfqZyWe4izrWNKVPLknno-->50h+</b></div>
+        <div data-page-node-id="lrJAaJEahk2EbY2y3SHmeL" class="grow"><span data-page-node-id="BwswYh4yXFDcgJX7vFTDZA" data-en="Progress" data-zh="进度"><!--pnid:PbuiwBhiOHs84KvAjFi8WV-->Progress</span><b data-page-node-id="hFLJrfLIaquoVUCf7RJro3" data-en="Cleared in 50h" data-zh="50h 通关"><!--pnid:ot93bsztezK1w3IPTmUWWC-->Cleared in 50h</b></div>
+        <div data-page-node-id="zAXKqxOLDjbcWbzbHC4Qiu" class="grow"><span data-page-node-id="193F6WuWSm6TIFRAMqMiir" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:eGjp5fFULpFvVk2fDSrLAU-->Spend + Merch</span><b data-page-node-id="gLBD1oCJAX8zVRktiAWaKX" data-en="Switch premium title" data-zh="switch买断制独立游戏"><!--pnid:LnUQUEPr2LoG57bwoF8olm-->Switch premium title</b></div>
+      </div>
+      </div>
+    </div>
+    <div data-page-node-id="axztiL9kkydO5kBEPbHa5f" class="gcard" data-cat="rpg" data-year="2026" style="animation:0.35s ease 240ms 1 normal both running gin">
+      <div data-page-node-id="e0CRbU8CzzDlQCMv9rvOwn" class="gcover"><img data-page-node-id="rzgyBZn2xqloQ3JKqrwxVd" alt="女神异闻录 P5R" loading="lazy" onerror="this.remove()" src="assets/img/games/persona5-royal.jpg"><span data-page-node-id="cuRq72SHDe2Ti0wxuA7SPf" class="gemo"><!--pnid:TxHsnvVnWR2kg5qN7UvGHE-->🃏</span><span data-page-node-id="RosEAAoL3NAIGVjXW7lsKk" class="gtype" data-en="JRPG" data-zh="JPRG" style="white-space:pre-wrap"><!--pnid:FP0w3yZ7u0sF8LY6MPmCGT-->JRPG</span></div>
+      <div data-page-node-id="xm5x0wPr8ABA2wUQbELN2m" class="gbody">
+        <div data-page-node-id="MkCeAnsk8QFL10zAvHYiCa" class="gname" data-en="Persona 5 Royal" data-zh="女神异闻录 P5R"><!--pnid:DQek3mPdQhKddWEi6Y8p2x-->Persona 5 Royal</div>
+        <div data-page-node-id="YB0pfE7q0LWEw3n85wLe9I" class="ginfo">
+        <div data-page-node-id="gVuxGG4TFLJN5jAbyEXdAn" class="grow"><span data-page-node-id="6zDTBiz6wuSzrTw7z6rGGE" data-en="Since" data-zh="入坑"><!--pnid:6w13HCtSA7GkT1QkwneLLT-->Since</span><b data-page-node-id="rrcQIwK8WdcRA2SnuY3Bqa"><!--pnid:v2N1vyjTPSBsEQznHb40NN-->2026</b></div>
+        <div data-page-node-id="PydqHgTIkXb4G1VqusRsur" class="grow"><span data-page-node-id="Mrf3kFm01nCOs8qNYP39kF" data-en="Playtime" data-zh="时长"><!--pnid:7Dle5ZkM5DltBNpILaSVmi-->Playtime</span><b data-page-node-id="FRXaYKkF9EzsAhdFGCPr06"><!--pnid:2H05h6fMnPRattLJok4qb6-->50h+</b></div>
+        <div data-page-node-id="zI23vE19tpy1NNbFYRVErm" class="grow"><span data-page-node-id="qMQpo8dg3arEfBfhbsRyyD" data-en="Progress" data-zh="进度"><!--pnid:nzzH2eXqSmDUHvfw5attt5-->Progress</span><b data-page-node-id="tWLWybw8EfKkq4ySYCoCfD"><!--pnid:PWecrcf5m4NCocAfWWGXo2-->50h+</b></div>
+        <div data-page-node-id="BCs9F26JaP33CGaFQnvsX3" class="grow"><span data-page-node-id="N3gIeJnNGjrdvo2Khv924a" data-en="Spend + Merch" data-zh="氪金+周边"><!--pnid:epmX96dQP5ANeKcgD1lDgQ-->Spend + Merch</span><b data-page-node-id="0H1iXBzQwZTUSmfj6BH4z5" data-en="Switch premium title" data-zh="switch买断制独立游戏"><!--pnid:xVpn6wrLxMJqDidYiXoseg-->Switch premium title</b></div>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<!--pnid:xvT3KMjqHyU782PJHI5HOL--><!-- ================= GAME GALLERY ================= -->
+
+
+<!--pnid:8AelNy7VXgGsjMfP5CVflb--><!-- ================= HOBBIES ================= -->
+<section data-page-node-id="6MFgLUXqv4aCi3sEC7cgxY" id="hobbies">
+  <div data-page-node-id="51O8NviPinRGXH3vRMtgee" class="sec-tag rv in"><span data-page-node-id="bfVSaP9jZUFdyGxeEhPssZ" class="i18n-zh"><!--pnid:tde3C7OkzPV64YbBBESkZr-->爱好 ·</span><span data-page-node-id="vy3gbKLhXJCq4n7FIJGNux" class="i18n-en"><!--pnid:4dcrjdsk54P7JT9dfUjh2N-->HOBBIES ·</span><span data-page-node-id="DqqnkzFQ7qJQVgk9eokuoY" data-en="Side Quests" data-zh="副本探索"><!--pnid:kphXirfg3eXm5HNzoFluNH-->Side Quests</span></div>
+  <h2 data-page-node-id="2U9DdJjcWq4CTqCUMSMoVY" class="sec-title rv in" data-en="My Hobby Compendium" data-zh="爱好专场"><!--pnid:GDUUjX2RXwpVn7VSZF4ymw-->My Hobby Compendium</h2>
+  <p data-page-node-id="51dCyPKbmFKkYkiIEDz6hJ" class="sec-sub rv in" data-en="Gaming, badge collecting, pop-up stores and cafe hunting — passion is the first principle of understanding players." data-zh="玩游戏、收谷子、逛快闪、探小店——热爱是生活的第一原理。" style="white-space:pre-wrap"><!--pnid:fjW1cTlDZGLs1sjKq6wy9Y-->Gaming, badge collecting, pop-up stores and cafe hunting — passion is the first principle of understanding players.</p>
+  <div data-page-node-id="USJ9OyS8e8CvuMM5KWBxbj" class="gal">
+    <figure data-page-node-id="r9E9Ja0k8NS32xpT7jJ29r" class="rv in"><img data-page-node-id="6NfVpw2x75HBfdRc5Bq2en" alt="Switch 游戏" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793031239906-ze2yp6.jpg"><span data-page-node-id="lxBMqdbIx8ibulAsOLcfE2" class="hobby-badge" data-en="🎮 Gamer" data-zh="🎮 游戏玩家"><!--pnid:HCOAv4vxcHA5KuL24XkG1P-->🎮 Gamer</span><figcaption data-page-node-id="jqaCM362yWU6DoeU9hPvkh"><span data-page-node-id="XhXRFs7M8OroeiCdw5Ldil" class="cap-t" data-en="Switch Daily" data-zh="Switch 日常"><!--pnid:esl4CYe9OWdOLqUSWi5BYx-->Switch Daily</span><span data-page-node-id="4I1bJw2lGMAWTRNHqrlHFn" class="cap-s" data-en="Ace Attorney / Persona 5 / Danganronpa" data-zh="逆转裁判 / 女神异闻录5 / 弹丸论破"><!--pnid:qsTx2iKauJjgIjI4Hh3Hio-->Ace Attorney / Persona 5 / Danganronpa</span></figcaption></figure>
+    <figure data-page-node-id="xfeFxMWCh2drChpeURO5aK" class="rv in"><img data-page-node-id="YA07IHS04ALXPmGRlMKRnf" alt="谷子收藏" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793092636907-1ev126.jpg"><span data-page-node-id="PzDlQin1GqHOgNWumjyuCX" class="hobby-badge" data-en="🌟 Merch Collecting" data-zh="🎂 谷子摆阵" style="white-space:pre-wrap"><!--pnid:172fHB9QR2wtW2APZPHG39-->🌟 Merch Collecting</span><figcaption data-page-node-id="0Ik22uzZg8PFZixBHY7YPB"><span data-page-node-id="IHV19U4KAQpQVY827470Ii" class="cap-t" data-en="Badges and Merch" data-zh="未定事件簿 · 莫弈生日摆阵"><!--pnid:dtOff89laRAKw2IsunqEDC-->Badges and Merch</span><span data-page-node-id="ri8WOv6hjHeUXMRWBe2RmF" class="cap-s" data-en="Tears of Themis · Artem Wing" data-zh="自推生日的一些仪式感"><!--pnid:KOrW2bnb0IqzlQjpd4q9im-->Tears of Themis · Artem Wing</span></figcaption></figure>
+    <figure data-page-node-id="J0eORQmouWlGCVn6VAvqw7" class="rv in"><img data-page-node-id="zbKk2Wm7Uc7BaNuaogAzEO" alt="K-ON 主题快闪店" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793031245700-9pa80h.jpg"><span data-page-node-id="8SaqHGK2bC2AE5pY0cp1HZ" class="hobby-badge" data-en="🏮 Pop-up Stores" data-zh="🏮 快闪打卡"><!--pnid:GhJ4HUlMf644HIfOnFw2OY-->🏮 Pop-up Stores</span><figcaption data-page-node-id="YNEFBwjUcKZJG0nCoP1e70"><span data-page-node-id="fE5YVvUp5QgQT040QzScWq" class="cap-t" data-en="K-ON! Pop-up Store" data-zh="K-ON! 主题快闪店"><!--pnid:7lLRMW5qHGoAyMyGpjOnYa-->K-ON! Pop-up Store</span><span data-page-node-id="QhVZmDWlkB69LeWXRGNcdz" class="cap-s" data-en="My beloved from the early 2D days" data-zh="二次元萌萌人时期的挚爱"><!--pnid:oUPJiyajD5cmZoabgxzCPp-->My beloved from the early 2D days</span></figcaption></figure>
+    <figure data-page-node-id="2kALKKL6UwI4ZXe0qZjFBi" class="rv in"><img data-page-node-id="MoAxn0RmesY0X24AlQGCaj" alt="咖啡店探店" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793092521829-8i4ld1.jpg"><span data-page-node-id="8Eog2XTD4bAvm5SWpmcNrs" class="hobby-badge" data-en="☕ City Walk" data-zh="📺 线下漫展"><!--pnid:aVJKasq50QSQ1A62OgG2xq-->☕ City Walk</span><figcaption data-page-node-id="s39q61iesgtrzBWzRIEyFz"><span data-page-node-id="OjWfJwq0k9dsh6524qmTcM" class="cap-t" data-en="Onita Cafe and Bistro" data-zh="BW2026 · SONY&amp;amp;魔法少女小圆"><!--pnid:aNP9IWV2dhWpPTccPTGXNF-->Onita Cafe and Bistro</span><span data-page-node-id="Z60Bs5OaXIX1A3ZlgBqOit" class="cap-s" data-en="Weekend cafe-hunting diary" data-zh="喜欢一些古早马猴烧酒"><!--pnid:KNUHKqxFuR2vtr0NDXFeVc-->Weekend cafe-hunting diary</span></figcaption></figure>
+    <figure data-page-node-id="oRbUdfOhekVhvUWdeLmKDg" class="rv in"><img data-page-node-id="dIWSrwzBtfqIzodyCSQE7c" alt="谷子收藏 2" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793031253280-xxbl3s.jpg"><span data-page-node-id="uAgH2VHS8OwcbC9dfAjZmJ" class="hobby-badge" data-en="🌟 Merch Collecting" data-zh="🌟 谷子收藏"><!--pnid:eNrl425lH5TeXpKVcAt8gn-->🌟 Merch Collecting</span><figcaption data-page-node-id="EujFhfKL4eyTsaqkPUe7yp"><span data-page-node-id="vBLEAs7E0vXc3rWBLj95si" class="cap-t" data-en="Badges | Stands | Plushies | Figures | Paper merch" data-zh="吧唧 | 立牌 | 棉花娃 | 手办 | 纸片谷"><!--pnid:iocr5wUUOD8aMqPy3Botam-->Badges | Stands | Plushies | Figures | Paper merch</span><span data-page-node-id="FmGFpBOqd7W1kYBTbR48ti" class="cap-s" data-en="A merch collector's simple joy" data-zh="吃谷人的快乐很简单"><!--pnid:XHOJhbh7nA8beEbaE6SGU2-->A merch collector's simple joy</span></figcaption></figure>
+    <figure data-page-node-id="HMGluIwqFchver89spZZdg" class="rv in"><img data-page-node-id="skxxnNcZUtq6E7c37svfqn" alt="探店 2" src="assets/img/tanshi2.jpg"><span data-page-node-id="TWPvJjy8koUes4GnSLRu0B" class="hobby-badge" data-en="☕ City Walk" data-zh="☕ 城市探索"><!--pnid:k1syKW1bOiOPwBDm98yWhq-->☕ City Walk</span><figcaption data-page-node-id="9MQfxwfXZLHAqj3i2WPbCE"><span data-page-node-id="LcaGBQycWo7XLvY3IBE0aF" class="cap-t" data-en="Wandering Small Shops" data-zh="日系小店漫游"><!--pnid:JXWxSN9TXjM7TJYuKJg111-->Wandering Small Shops</span><span data-page-node-id="DBsseA3dHOJKdW8UF7uup8" class="cap-s" data-en="Recording the healing corners of the city" data-zh="记录城市里的治愈角落"><!--pnid:dAp9bPrL1GQAk5YpIjdjB3-->Recording the healing corners of the city</span></figcaption></figure>
+  </div>
+
+  <div data-page-node-id="A5FzhKSjsp2lNUIXMnddsY" class="fan-mod rv in">
+    <h3 data-page-node-id="IvuPtnB7jVztAsgifXGvFp" data-en="Beyond the World · Fan-made Print Collection" data-zh="世界之外 · 同人二创合集"><!--pnid:wwcZ0v3Qp4GPeqv3fMvBgp-->Beyond the World · Fan-made Print Collection</h3>
+    <p data-page-node-id="7ACRyHHggOD2cML7XrO1Cz" class="fnote" data-en="My own fan-merch designs (square cards and postcards) for the otome game Beyond the World — from idea and layout to production." data-zh="为乙女游戏《世界之外》做的同人自印谷wu'li'a（方卡 &amp;amp; 明信片）——使用醒图APP进行排版设计。为乙女游戏《世界之外》做的同人自印谷子（方卡 &amp;amp;amp; 明信片）——使用醒图APP进行排版设计。"><!--pnid:CZDihbZFfBTTltG2SFF71H-->My own fan-merch designs (square cards and postcards) for the otome game Beyond the World — from idea and layout to production.</p>
+    <div data-page-node-id="pr8w1rLE6Eo9tKmwNRUMje" class="fan-grid square">
+      <figure data-page-node-id="HRz1ZRrHHUzpqD9Y5fZ1PD"><img data-page-node-id="FAbAqaZu6XIiVx9gqYuPBD" alt="方卡-夏萧因" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793028028599-we1irs.jpg"><span data-page-node-id="YxfqYhUgu388lHwpBOzpdj" class="fkind" data-en="Square Card" data-zh="方卡"><!--pnid:ZL08fpPkdnrNdUNHDDjlUL-->Square Card</span><figcaption data-page-node-id="9PFREk6sSZZxxy5Jza0THI" data-en="Xia Xiaoyin" data-zh="顾时夜"><!--pnid:EwRhoFU0rcOpGkScfNaORI-->Xia Xiaoyin</figcaption></figure>
+      <figure data-page-node-id="jrZ0mr6vJdCcyyFqZVQn6E"><img data-page-node-id="NBocynPA00AzIfEdbCHN9M" alt="方卡-易遇" src="assets/img/fangka-yiyu.jpg"><span data-page-node-id="VsO9kauuCpfHoAA8IjaS4f" class="fkind" data-en="Square Card" data-zh="方卡"><!--pnid:jNbRyKDAVCQjIrvlRZdacD-->Square Card</span><figcaption data-page-node-id="kEGuzuTbmblI4lLUaFnxoC" data-en="Yi Yu" data-zh="易遇"><!--pnid:vOemnaVkRoDXTYwl4clmp1-->Yi Yu</figcaption></figure>
+      <figure data-page-node-id="KLGqWBgb6oApIZTVhqyzrl"><img data-page-node-id="7ITX0ab3IHBWdv1I134V4i" alt="方卡-柏源" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793028036873-qkw1ph.jpg"><span data-page-node-id="czCrU18tbGmFQWN6MhZpO5" class="fkind" data-en="Square Card" data-zh="方卡"><!--pnid:LcVh0KAtXcyQXBXUXNxvdU-->Square Card</span><figcaption data-page-node-id="3b1W1r55ke9yAq6p2fdh10" data-en="Bo Yuan" data-zh="夏萧因"><!--pnid:AvYJbnxgo0vMH4fttRdyxZ-->Bo Yuan</figcaption></figure>
+      <figure data-page-node-id="YTmou14NpNlTXnRI9qNsa9"><img data-page-node-id="mu1hYUSxegIIRiCc5KXZYC" alt="方卡-顾时夜" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793028062357-prb5r0.jpg"><span data-page-node-id="MOa78his0InkH9KnOoNHnz" class="fkind" data-en="Square Card" data-zh="方卡"><!--pnid:pf0NvWBnnNTOngvvobTa70-->Square Card</span><figcaption data-page-node-id="oFmXkvSifaqpr2evQrIDFr" data-en="Gu Shiye" data-zh="柏源"><!--pnid:TfRP5MhdMzbf466xcXl0pn-->Gu Shiye</figcaption></figure>
+    </div>
+    <div data-page-node-id="28Z0SKLqJvaHf0rSPEvtyw" class="fan-grid postcard">
+      <figure data-page-node-id="tr3tqe2Qb8CxdtBS9qnpFg"><img data-page-node-id="muN0ZGR4Ucca2yXsF0OTX3" alt="明信片-夏萧因" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793028091120-6vph99.jpg"><span data-page-node-id="IHaPqek3OCzveIldQVr5be" class="fkind" data-en="Postcard" data-zh="明信片"><!--pnid:c1PGweatBPjSRhNIAQMtvX-->Postcard</span><figcaption data-page-node-id="NWjNc6YHFjwYmZ6MP9oxYQ" data-en="Xia Xiaoyin" data-zh="顾时夜"><!--pnid:DcM5jjrkB8wzcVcD0bEdJU-->Xia Xiaoyin</figcaption></figure>
+      <figure data-page-node-id="ikpKAmU7t1oZvb3byr6uSR"><img data-page-node-id="DNH12JASbsVhyjFL1d0Iyw" alt="明信片-易遇" src="assets/img/postcard-yiyu.jpg"><span data-page-node-id="VjRmTnWrXXeFwymSVGDmhz" class="fkind" data-en="Postcard" data-zh="明信片"><!--pnid:yBMmcimZVwDRp8T0ExeZca-->Postcard</span><figcaption data-page-node-id="8BSo6aBzJNrp3tcnSclDUq" data-en="Yi Yu" data-zh="易遇"><!--pnid:xHBW73LlMeED6XYEh0JdwM-->Yi Yu</figcaption></figure>
+      <figure data-page-node-id="wOtA0mq7LEMf4Uk1aRL9WD"><img data-page-node-id="wexQ7koK9nBgx1SPq4tNgK" alt="明信片-柏源" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793028085229-m5ok4v.jpg"><span data-page-node-id="cEV3XODnhD8EVfjptFZkKT" class="fkind" data-en="Postcard" data-zh="明信片"><!--pnid:zf2QVK7XdZcnVJ3jlDVOz1-->Postcard</span><figcaption data-page-node-id="wbxCzEwiDVu3SFhAOyVHVJ" data-en="Bo Yuan" data-zh="夏萧因"><!--pnid:IB1QgWEUGMel3we040VWWa-->Bo Yuan</figcaption></figure>
+      <figure data-page-node-id="KcYeocCbjeSK3AvL0veBlw"><img data-page-node-id="jW4TTQdafXJjJOl9SwxYVI" alt="明信片-顾时夜" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793028081392-gvg726.jpg"><span data-page-node-id="mK8fzwoMQqXHjUU0J6tT1f" class="fkind" data-en="Postcard" data-zh="明信片"><!--pnid:iyXAyH53quwBLNGpwdECHi-->Postcard</span><figcaption data-page-node-id="4V0lxaO9jQ36zxTVBoAheO" data-en="Gu Shiye" data-zh="柏源"><!--pnid:5eU0vCWVu9yZXfPTfR1OG3-->Gu Shiye</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!--pnid:tV3Q2Xrb8IPQtjQZAsotmD--><!-- ================= GALLERY ================= -->
+<section data-page-node-id="Mjy48v7elA6yC8LKALSF0U" id="gallery">
+  <div data-page-node-id="8XIz3K2n6oMi0ikIgxctaV" class="sec-tag rv in"><span data-page-node-id="N3ZAZbx6wOD8xr4cp0RnqC" class="i18n-zh"><!--pnid:1XBl6NHhWjnBfLM1XiLj98-->生活 ·</span><span data-page-node-id="oCaHTyzfmIQl56jmaeemWb" class="i18n-en"><!--pnid:UdGrkYOFOIWYI6mUMZPPLQ-->GALLERY ·</span><span data-page-node-id="YtAb9YtIpGKwpEtyYRdRqO" data-en="Album Pages" data-zh="相册残页"><!--pnid:NGrvwUFpm85u6xncBwUmc2-->Album Pages</span></div>
+  <h2 data-page-node-id="gt0tbVH8TA9LOLTRZU9lhb" class="sec-title rv in" data-en="Highlights of Life" data-zh="生活里的高光时刻"><!--pnid:qMpDqK2KN2Rw00M0Ipa9nB-->Highlights of Life</h2>
+  <p data-page-node-id="vBGgrt8CRTc5Cin3BKncTK" class="sec-sub rv in wide" data-en="Bilibili World 2026 · TOD'S Office Internship · CUHK-Shenzhen High Table Dinner / Other hobbies: mysticism · constellation and bracelet collecting | simple otome fan-works | ins-style photography" data-zh="Bilibili World 2026 · TOD'S Office Showroom · 香港中文大学（深圳）高桌晚宴<br data-page-node-id=&quot;YdOKsKgSRFX42bggvdBZCH&quot;>"><!--pnid:UdQx8A9F9mXIXgEjzczr81-->Bilibili World 2026 · TOD'S Office Internship · CUHK-Shenzhen High Table Dinner / Other hobbies: mysticism · constellation and bracelet collecting | simple otome fan-works | ins-style photography</p>
+  <div data-page-node-id="eNMoVkOHjrLmk4vyuXwGwY" class="gal">
+    <figure data-page-node-id="Woml8ejG4i7nrvgl7tKFZa" class="rv in"><img data-page-node-id="zIP5pxgqBZD880yEyO5JPi" alt="BW 2026" data-last-crop-h data-last-crop-w data-last-crop-x data-last-crop-y data-original-src src="images/img-1793019638923-egwfy3.jpg"><figcaption data-page-node-id="VPknT6pMnIGkJ5kfdFX8RM"><span data-page-node-id="a1eKAMgXDEHObTk9reZX39" class="cap-t" data-en="Bilibili World 2026" data-zh="Bilibili World 2026"><!--pnid:Gj0kPgUlxhIpO4kQTbW347-->Bilibili World 2026</span><span data-page-node-id="CzjMfmXf8WdIO8a9r1OCbI" class="cap-s" data-en="Reverse:1999 Vertin | Gintama Kagura" data-zh="《重返未来1999》维尔汀 | 《银魂》神乐"><!--pnid:3KuOWJhtDKnSd0CNVHOYaM-->Reverse:1999 Vertin | Gintama Kagura</span></figcaption></figure>
+    <figure data-page-node-id="83FxIprcxjeYaFh6m4KGTM" class="rv in"><img data-page-node-id="621fsxKLSF0SvkYJKhNE79" alt="Tods 门店" src="assets/img/tods.jpg"><figcaption data-page-node-id="2iZKKoEJ4lJSj5qvzLF6Hz"><span data-page-node-id="JA3XtegxscIjoJybATLAWt" class="cap-t" data-en="TOD'S China Office | Internship" data-zh="TOD'S 中国办公室 Showroom | 实习"><!--pnid:LBOKqDBXi6bVN78p1VRzjP-->TOD'S China Office | Internship</span><span data-page-node-id="BoFbxRyAcHDOgrW3LA3mCL" class="cap-s" data-en="Fortune 500 luxury consumer insight | MKT and PR | Celebrity" data-zh="世界五百强奢侈品消费洞察 | 市场与公关 | 明星管理"><!--pnid:i6PdQxK4OMmNRw8zGMmp7r-->Fortune 500 luxury consumer insight | MKT and PR | Celebrity</span></figcaption></figure>
+    <figure data-page-node-id="vDLoWBRZMthkn5Dd1h62ng" class="rv in"><img data-page-node-id="QdWFkZhE2paB4RGBnpo5Kh" alt="高桌晚宴" src="assets/img/hightable.jpg"><figcaption data-page-node-id="KIPSifJ7Z1BhSTswXETvag"><span data-page-node-id="Cs0kWo8xhctIOTgTXMDYcI" class="cap-t" data-en="CUHK-Shenzhen High Table Dinner" data-zh="活动留影 | 香港中文大学（深圳）高桌晚宴"><!--pnid:HAZTCSqriqrdZ0fDCls156-->CUHK-Shenzhen High Table Dinner</span><span data-page-node-id="XnqzoAGHENfPezEXFoKehr" class="cap-s" data-en="Every frame of living earnestly" data-zh="认真感受生活的每一帧"><!--pnid:bHA8GxjddCzbIHipFQMlz5-->Every frame of living earnestly</span></figcaption></figure>
+  </div>
+</section>
+
+<!--pnid:nVPm4CsZzKlyvEBcfrY3fy--><!-- ================= CONTACT ================= -->
+<section data-page-node-id="8kuOjM7w0Yd7k3RjkU4n80" id="contact">
+  <div data-page-node-id="UGJVgmB3EF7uSiA0aHtXki" class="contact-box rv in">
+    <h2 data-page-node-id="4D84m0wmvcNSwCy0BL0h8g"><span data-page-node-id="Cqrn2VNt7HWPxdovM8sBIs" class="i18n-zh" style="white-space:pre-wrap"><!--pnid:sVIvJ2fwW1FbdjYMIPZclB-->玩家X，准备就绪？ 🎮</span><span data-page-node-id="lyRGMlZHpwVBdlHNUuRAnY" class="i18n-en"><!--pnid:xcC0a4XdoaPgY77pvuhVLB-->Player 2, Ready? 🎮</span></h2>
+    <p data-page-node-id="qenZj3QIAY4chAm7EVc8m9" data-en="If you are in the gaming or internet industry, let us team up — internships, campus recruiting, or any fun collaboration." data-zh="无论您在游戏 | 互联网 | 快消行业，欢迎和我组队 —— 实习、校招或任何有趣的合作都欢迎来聊。" style="white-space:pre-wrap"><!--pnid:4rp0kRWXjCA3xZMHtijIax-->If you are in the gaming or internet industry, let us team up — internships, campus recruiting, or any fun collaboration.</p>
+    <div data-page-node-id="5jQ28FzTltsFQFbTUxOPST" class="nowload">
+      <span data-page-node-id="dHmFOLJBV2wBInPvHAGJjo" class="nl-tag" data-en="NOW LOADING · CURRENTLY LEARNING" data-zh="载入中 · 目前正在进行的研究："><!--pnid:Ucwm0chWBkM0U5VXYkL96d-->NOW LOADING · CURRENTLY LEARNING</span>
+      <div data-page-node-id="Gwj0pT0adiY9Pv6ET0CfFx" class="nl-item" data-en="🤖 Machine Learning — model theory and hands-on projects" data-zh="🤖 <b data-page-node-id=&quot;73na2tBzh2VcoBlJnpdZeQ&quot;>机器学习</b> —— 持续深入学习中"><!--pnid:iWkRXUIubaTH5lZwmNQJnv-->🤖 Machine Learning — model theory and hands-on projects</div>
+      <div data-page-node-id="WgUUaW87Me8G5YE6Sj1pLO" class="nl-item" data-en="🎮 Game Statistics — player behavior and monetization analytics" data-zh="🎮 <b data-page-node-id=&quot;Mpdg4yqCj8gojimjLwrodL&quot;>游戏统计</b> —— 玩家行为与付费数据分析方向"><!--pnid:OVM7OtI3yAcOQ3UPW112E6-->🎮 Game Statistics — player behavior and monetization analytics</div>
+    </div>
+    <div data-page-node-id="PsWs1rDlrmnbJVt14YK5dp" class="contact-links">
+      <a data-page-node-id="Ba4KBWvfTV398ki3gAlLdz" class="clink" href="mailto:746185948@qq.com">
+        <svg data-page-node-id="QEL1HSJdA6kZCgySRcBdBo" class="ico" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect data-page-node-id="xFWNoQIJQUbEZpbfUnAGzi" height="16" rx="2" width="20" x="2" y="4"></rect><path data-page-node-id="Sd3pVvAZjwVvtIsbbI7uZV" d="m2 7 10 6 10-6"></path></svg><!--pnid:Pf1AcepBSjLzsBzTPdBpxW-->
+        746185948@qq.com
+      </a>
+      <a data-page-node-id="eYFdTXWABjFpSVD22capMb" class="clink" href="tel:15336550901">
+        <svg data-page-node-id="izP3yW0qnRk3y4igfvvxSa" class="ico" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path data-page-node-id="PuX6lfKUjsbITl3Pj1NHG8" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><!--pnid:Qk0ztGuc3HY0acISDKMCVg-->
+        153-3655-0901
+      </a>
+      <span data-page-node-id="TQEVhcMkH8p2D7ZUiWtsz5" class="clink">
+        <svg data-page-node-id="3FrXzH4WEAaXH0svtXcm2C" class="ico" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path data-page-node-id="ZLpGLAK1G6pgsYD7mogZSR" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle data-page-node-id="HQ8wE6AWv3ZcKF7CWC3Rs7" cx="12" cy="10" r="3"></circle></svg>
+        <span data-page-node-id="eTjUHCTdfItpkGlZTUCJgI" data-en="Shanghai · Also Shenzhen / Hangzhou" data-zh="上海 · 可北上广深/江苏/浙江 · 接受多出差/海外派遣"><!--pnid:tfkpsojjnnAMGDT83kpd3I-->Shanghai · Also Shenzhen / Hangzhou</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+
+
+<footer data-page-node-id="57Y4ZSDikOSeevM0qmxoZl"><span data-page-node-id="cAAXNHV9Z29z0VRz6erLAc" class="i18n-zh" style="white-space:pre-wrap"><!--pnid:WXFDTUfcJs5PsDKU4Ff4op-->© 2026 张韵周 · ZOEY · CUHKSZ · AI · Game · Marketing&nbsp;· 求职方向：游戏 | 互联网 | 快消</span><span data-page-node-id="ZFzhnYIGD6fNjbP9NQSqbT" class="i18n-en"><!--pnid:0Wvk67DcNjTFTqFC43XTGi-->© 2026 Zhang Yunzhou · CUHKSZ · AI · Game · MKT&nbsp;· Seeking roles in Gaming | Internet | FMCG</span></footer><div data-page-node-id="iflAjDsfOLg5CBHFsUFtYU" class id="lb"><span data-page-node-id="ZvtGeeODop4IJc2X3QW41I" class="close"><!--pnid:qjhUj6aRIxIQaCzya87pcm-->✕</span><img data-page-node-id="B3eD9FWpPhtSOPvqsmcD4k" alt src><span data-page-node-id="61tyDvr3ErTtlcUNK2mMI2" class="hint" data-hint-en="Double-tap to zoom" data-hint-zh="双击 / 双指可缩放图片"><!--pnid:JCRaL4wk6ie9zKTZdM0jB9-->Double-tap to zoom</span></div>
+
+<script data-page-node-id="Aj0w3atXgXAwItInyU8Yw6" data-pnid-children="u6bHVEyrJtojIRNPDF3cQX">
+(function(){
+  'use strict';
+  var store = {
+    get: function(k){ try { return window.localStorage.getItem(k); } catch(e){ return null; } },
+    set: function(k,v){ try { window.localStorage.setItem(k,v); } catch(e){} }
+  };
+  var allRv = [].slice.call(document.querySelectorAll('.rv'));
+  function showAll(){ allRv.forEach(function(el){ el.classList.add('in'); }); }
+  window.addEventListener('error', function(){ showAll(); });
+
+  /* ---------- 1. reveal on scroll (runs first, never blocks below) ---------- */
+  try{
+    if(!('IntersectionObserver' in window)){ showAll(); }
+    else{
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+      allRv.forEach(function(el){ io.observe(el); });
+      var revealInView = function(){
+        allRv.forEach(function(el){
+          if(el.classList.contains('in')) return;
+          var r = el.getBoundingClientRect();
+          if(r.top < window.innerHeight * 1.05 && r.bottom > -80) el.classList.add('in');
+        });
+      };
+      window.addEventListener('scroll', revealInView, { passive: true });
+      window.addEventListener('resize', revealInView, { passive: true });
+      revealInView();
+      setTimeout(function(){ if(!document.querySelector('.rv.in')) showAll(); }, 2000);
+    }
+  }catch(e){ showAll(); }
+
+  /* ---------- 2. theme ---------- */
+  try{
+    var themeBtn = document.getElementById('themeBtn');
+    function applyTheme(t){
+      document.documentElement.setAttribute('data-theme', t);
+      if(themeBtn) themeBtn.textContent = (t === 'dark' ? '☀️' : '🌙');
+      store.set('zoey-theme', t);
+    }
+    applyTheme(store.get('zoey-theme') || 'light');
+    if(themeBtn) themeBtn.addEventListener('click', function(){
+      applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  }catch(e){ console.warn('theme', e); }
+
+  /* ---------- 3. language ---------- */
+  try{
+    var langBtn = document.getElementById('langBtn');
+    /* only translate leaf-level nodes: a [data-en] that contains another [data-en]
+       would wipe its children when innerHTML is replaced, so such nodes are skipped */
+    var i18nNodes = [].slice.call(document.querySelectorAll('[data-en]')).filter(function(n){
+      return !n.querySelector('[data-en]');
+    });
+    i18nNodes.forEach(function(n){ if(!n.hasAttribute('data-zh')) n.dataset.zh = n.innerHTML; });
+    var hintEl = document.querySelector('#lb .hint');
+    var metaDesc = document.querySelector('meta[name="description"]');
+    var metaZh = metaDesc ? metaDesc.getAttribute('content') : '';
+    var metaEn = 'Zhang Yunzhou — MPhil student in Computational Social Science, game design and data analytics. Game Jams, VR, AI agent simulation and more.';
+    var titleZh = '张韵周 · 游戏与互联网作品集';
+    var titleEn = 'Zhang Yunzhou · Gaming & Internet Portfolio';
+    var curLang = store.get('zoey-lang') || 'zh';
+    function applyLang(l){
+      var isEn = (l === 'en');
+      curLang = l;
+      document.documentElement.lang = (isEn ? 'en' : 'zh-CN');
+      i18nNodes.forEach(function(n){
+        try{
+          var v = isEn ? n.getAttribute('data-en') : n.getAttribute('data-zh');
+          if(v !== null && v !== undefined) n.innerHTML = v;
+        }catch(e){}
+      });
+      document.title = isEn ? titleEn : titleZh;
+      if(metaDesc) metaDesc.setAttribute('content', isEn ? metaEn : metaZh);
+      if(langBtn) langBtn.textContent = (isEn ? '中' : 'EN');
+      if(hintEl) hintEl.textContent = (isEn ? hintEl.dataset.hintEn : hintEl.dataset.hintZh);
+      store.set('zoey-lang', l);
+    }
+    applyLang(curLang);
+    if(langBtn) langBtn.addEventListener('click', function(){ applyLang(curLang === 'en' ? 'zh' : 'en'); });
+  }catch(e){ console.warn('lang', e); }
+
+  /* ---------- 4. skill bars ---------- */
+  try{
+    var bars = [].slice.call(document.querySelectorAll('.skill-bar i'));
+    if(!('IntersectionObserver' in window)){ bars.forEach(function(el){ el.style.width = el.dataset.w; }); }
+    else{
+      var bio = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.style.width = e.target.dataset.w; bio.unobserve(e.target); } });
+      }, { threshold: 0.3 });
+      bars.forEach(function(el){ bio.observe(el); });
+      setTimeout(function(){ bars.forEach(function(el){ if(!el.style.width) el.style.width = el.dataset.w; }); }, 2500);
+    }
+  }catch(e){ console.warn('bars', e); }
+
+  /* ---------- 5. nav active state ---------- */
+  try{
+    var secs = [].slice.call(document.querySelectorAll('section[id]'));
+    var links = [].slice.call(document.querySelectorAll('nav ul a'));
+    window.addEventListener('scroll', function(){
+      var y = window.pageYOffset + 140, cur = secs.length ? secs[0].id : '';
+      secs.forEach(function(s){ if(s.offsetTop <= y) cur = s.id; });
+      links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + cur); });
+    }, { passive: true });
+  }catch(e){ console.warn('nav', e); }
+
+  /* ---------- 6. game gallery filters ---------- */
+  try{
+    var catTabs = [].slice.call(document.querySelectorAll('#catTabs .gtab'));
+    var yearTabs = [].slice.call(document.querySelectorAll('#yearTabs .gtab'));
+    var cards = [].slice.call(document.querySelectorAll('#ggrid .gcard'));
+    var curCat = 'all', curYear = 'all';
+    function filterGames(){
+      cards.forEach(function(c, i){
+        var okCat = curCat === 'all' || (c.dataset.cat || '').split(/\s+/).indexOf(curCat) > -1;
+        var okYear = curYear === 'all' || c.dataset.year === curYear;
+        var show = okCat && okYear;
+        c.classList.toggle('hide', !show);
+        if(show){
+          c.style.animation = 'none';
+          void c.offsetWidth;
+          c.style.animation = 'gin .35s ease both';
+          c.style.animationDelay = (i % 8) * 40 + 'ms';
+        }
+      });
+    }
+    catTabs.forEach(function(t){
+      t.addEventListener('click', function(){
+        catTabs.forEach(function(x){ x.classList.remove('on'); });
+        t.classList.add('on'); curCat = t.dataset.cat; filterGames();
+      });
+    });
+    yearTabs.forEach(function(t){
+      t.addEventListener('click', function(){
+        yearTabs.forEach(function(x){ x.classList.remove('on'); });
+        t.classList.add('on'); curYear = t.dataset.year; filterGames();
+      });
+    });
+  }catch(e){ console.warn('filters', e); }
+
+  /* ---------- 7. lightbox with zoom & pan ---------- */
+  try{
+    var lb = document.getElementById('lb');
+    if(!lb) return;
+    var lbImg = lb.querySelector('img');
+    var zoomed = false;
+    function openLB(src){ lbImg.src = src; lbImg.style.transform = ''; zoomed = false; lb.classList.add('on'); }
+    function closeLB(){ lb.classList.remove('on'); lbImg.setAttribute('src',''); lbImg.style.transform = ''; zoomed = false; }
+    document.querySelectorAll('.proj-media, .proj-sub img, .gal figure, .fan-grid figure').forEach(function(el){
+      el.addEventListener('click', function(){
+        var img = (el.tagName === 'IMG') ? el : el.querySelector('img');
+        if(img && img.getAttribute('src')) openLB(img.getAttribute('src'));
+      });
+    });
+    lb.addEventListener('click', function(e){ if(e.target !== lbImg || !zoomed) closeLB(); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
+    function setZoom(cx, cy){
+      zoomed = !zoomed;
+      if(zoomed) lbImg.style.transformOrigin = cx + 'px ' + cy + 'px';
+      lbImg.style.transform = zoomed ? 'scale(2.6)' : '';
+    }
+    lbImg.addEventListener('dblclick', function(e){ e.stopPropagation(); setZoom(e.clientX, e.clientY); });
+    var lastTap = 0;
+    lb.addEventListener('touchend', function(e){
+      var now = Date.now();
+      if(now - lastTap < 320){
+        var t = e.changedTouches[0];
+        setZoom(t.clientX, t.clientY);
+        lastTap = 0;
+      } else { lastTap = now; }
+    });
+    var panning = false, px = 0, py = 0, ox = 50, oy = 50;
+    lbImg.addEventListener('pointerdown', function(e){
+      if(!zoomed) return;
+      panning = true; px = e.clientX; py = e.clientY;
+      var r = lbImg.getBoundingClientRect();
+      ox = ((px - r.left) / r.width) * 100; oy = ((py - r.top) / r.height) * 100;
+      lbImg.style.transformOrigin = ox + '% ' + oy + '%';
+      if(lbImg.setPointerCapture) lbImg.setPointerCapture(e.pointerId);
+    });
+    lbImg.addEventListener('pointermove', function(e){
+      if(!panning || !zoomed) return;
+      ox -= (e.clientX - px) * 0.25; oy -= (e.clientY - py) * 0.25;
+      ox = Math.max(0, Math.min(100, ox)); oy = Math.max(0, Math.min(100, oy));
+      lbImg.style.transformOrigin = ox + '% ' + oy + '%';
+    });
+    ['pointerup','pointercancel','pointerleave'].forEach(function(ev){
+      lbImg.addEventListener(ev, function(){ panning = false; });
+    });
+  }catch(e){ console.warn('lightbox', e); }
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
